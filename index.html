@@ -13,7 +13,7 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
   <!-- Vanilla Tilt JS for 3D Card Effects -->
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  
 
   <!-- Particles.js Background -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -23,8 +23,8 @@
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
   <!-- Vanta.js & Three.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.halo.min.js"></script>
+  
+  
 
 
 
@@ -113,7 +113,12 @@
 
     .scroll-track {
       display: inline-flex;
-      animation: scroll-left 30s linear infinite;
+      animation: scroll-left 60s linear infinite;
+      will-change: transform;
+    }
+
+    .scroll-container:hover .scroll-track {
+      animation-play-state: paused;
     }
 
     .scroll-track .card {
@@ -129,8 +134,8 @@
     }
 
     @keyframes scroll-left {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% { transform: translate3d(0,0,0); }
+      100% { transform: translate3d(-40%,0,0); }
     }
     .social-section {
       text-align: center;
@@ -211,6 +216,8 @@
       <a class="mx-2 my-1 text-white custom-header" href="#experience"><b>Experience</b></a>
       <a class="mx-2 my-1 text-white custom-header" href="#Softwares"><b>Softwares</b></a>
       <a class="mx-2 my-1 text-white custom-header" href="#projects"><b>Projects</b></a>
+      <a class="mx-2 my-1 text-white custom-header" href="#logo"><b>Logos</b></a>
+      <a class="mx-2 my-1 text-white custom-header" href="#advertisements"><b>Advertisements</b></a>
       <a class="mx-2 my-1 text-white custom-header" href="#photoshop"><b>Photoshop Arts</b></a>
       <a class="mx-2 my-1 text-white custom-header" href="#certification"><b>Certifications</b></a>
     </nav>
@@ -230,7 +237,7 @@
         </div>
         <!-- Image -->
         <div class="col-md-5 text-center">
-          <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/abhishek.JPG" class="img-fluid rounded-circle " style="
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/abhishek.JPG" class="img-fluid rounded-circle " style="
                 max-width: 100%;
                 height: auto;
                 object-fit: cover;
@@ -271,7 +278,7 @@
     <div class="row align-items-center">
       <!-- Image on Left -->
       <div class="col-md-5 text-center">
-          <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/abhishek.JPG" alt="John's Portrait" class="img-fluid rounded-circle " style="
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/abhishek.JPG" alt="John's Portrait" class="img-fluid rounded-circle " style="
                 max-width: 100%;
                 height: auto;
                 object-fit: cover;
@@ -353,7 +360,7 @@ knowledge of animation techniques and software.
             <div class="card-body text-center">
               <div class="d-flex align-items-center justify-content-center my-3">
                 <div class="progress-circle">
-                  <img src="https://tse1.mm.bing.net/th/id/OIP.KPZ6MVgafQOSEu8_2TAhngHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bootstrap"
+                  <img loading="lazy" decoding="async" src="https://tse1.mm.bing.net/th/id/OIP.KPZ6MVgafQOSEu8_2TAhngHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bootstrap"
                     class="rounded-circle" />
                 </div>
               </div>
@@ -369,7 +376,7 @@ knowledge of animation techniques and software.
             <div class="card-body text-center">
               <div class="d-flex align-items-center justify-content-center my-3">
                 <div class="progress-circle">
-                  <img src="https://logos-world.net/wp-content/uploads/2023/05/Blender-Symbol.png" alt="Bootstrap"
+                  <img loading="lazy" decoding="async" src="https://logos-world.net/wp-content/uploads/2023/05/Blender-Symbol.png" alt="Bootstrap"
                     class="rounded-circle" />
                 </div>
               </div>
@@ -385,7 +392,7 @@ knowledge of animation techniques and software.
             <div class="card-body text-center">
               <div class="d-flex align-items-center justify-content-center my-3">
                 <div class="progress-circle">
-                  <img src="https://i.pinimg.com/originals/f5/32/57/f532571da1fe9af84b95e3db5e79d4c3.png" alt="Bootstrap"
+                  <img loading="lazy" decoding="async" src="https://i.pinimg.com/originals/f5/32/57/f532571da1fe9af84b95e3db5e79d4c3.png" alt="Bootstrap"
                     class="rounded-circle" />
                 </div>
               </div>
@@ -401,7 +408,7 @@ knowledge of animation techniques and software.
             <div class="card-body text-center">
               <div class="d-flex align-items-center justify-content-center my-3">
                 <div class="progress-circle">
-                  <img src="https://static.vecteezy.com/system/resources/previews/005/488/339/original/adobe-illustrator-logo-free-vector.jpg" alt="Bootstrap"
+                  <img loading="lazy" decoding="async" src="https://static.vecteezy.com/system/resources/previews/005/488/339/original/adobe-illustrator-logo-free-vector.jpg" alt="Bootstrap"
                     class="rounded-circle" />
                 </div>
               </div>
@@ -417,7 +424,7 @@ knowledge of animation techniques and software.
             <div class="card-body text-center">
               <div class="d-flex align-items-center justify-content-center my-3">
                 <div class="progress-circle">
-                  <img src="https://static.vecteezy.com/system/resources/previews/056/850/883/non_2x/adobe-indesign-logo-on-a-transparent-background-free-png.png" alt="Bootstrap"
+                  <img loading="lazy" decoding="async" src="https://static.vecteezy.com/system/resources/previews/056/850/883/non_2x/adobe-indesign-logo-on-a-transparent-background-free-png.png" alt="Bootstrap"
                     class="rounded-circle" />
                 </div>
               </div>
@@ -433,7 +440,7 @@ knowledge of animation techniques and software.
             <div class="card-body text-center">
               <div class="d-flex align-items-center justify-content-center my-3">
                 <div class="progress-circle">
-                  <img src="https://th.bing.com/th/id/R.2c824f701da6cbb85686e993f3d249a3?rik=maNYBlic6A3OqQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fautodesk-maya-logo-png-maya-logo-pluspng-1000x1000.jpg&ehk=G9qOQFavhNZxUbkhGc0Ouzgh8%2fis7OT8RZfRe9Ld8HQ%3d&risl=&pid=ImgRaw&r=0" alt="Bootstrap"
+                  <img loading="lazy" decoding="async" src="https://th.bing.com/th/id/R.2c824f701da6cbb85686e993f3d249a3?rik=maNYBlic6A3OqQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fautodesk-maya-logo-png-maya-logo-pluspng-1000x1000.jpg&ehk=G9qOQFavhNZxUbkhGc0Ouzgh8%2fis7OT8RZfRe9Ld8HQ%3d&risl=&pid=ImgRaw&r=0" alt="Bootstrap"
                     class="rounded-circle" />
                 </div>
               </div>
@@ -449,7 +456,7 @@ knowledge of animation techniques and software.
             <div class="card-body text-center">
               <div class="d-flex align-items-center justify-content-center my-3">
                 <div class="progress-circle">
-                  <img src="https://tse2.mm.bing.net/th/id/OIP.aOC9tbP6A9CfWOPfQRZlPAHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bootstrap"
+                  <img loading="lazy" decoding="async" src="https://tse2.mm.bing.net/th/id/OIP.aOC9tbP6A9CfWOPfQRZlPAHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bootstrap"
                     class="rounded-circle" />
                 </div>
               </div>
@@ -465,7 +472,7 @@ knowledge of animation techniques and software.
             <div class="card-body text-center">
               <div class="d-flex align-items-center justify-content-center my-3">
                 <div class="progress-circle">
-                  <img src="https://static.vecteezy.com/system/resources/previews/021/963/713/original/adobe-premiere-pro-icon-free-vector.jpg" alt="Bootstrap"
+                  <img loading="lazy" decoding="async" src="https://static.vecteezy.com/system/resources/previews/021/963/713/original/adobe-premiere-pro-icon-free-vector.jpg" alt="Bootstrap"
                     class="rounded-circle" />
                 </div>
               </div>
@@ -481,7 +488,7 @@ knowledge of animation techniques and software.
             <div class="card-body text-center">
               <div class="d-flex align-items-center justify-content-center my-3">
                 <div class="progress-circle">
-                  <img src="https://tse4.mm.bing.net/th/id/OIP.tnxM2WiEcw9EktiYwsGmIQHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bootstrap"
+                  <img loading="lazy" decoding="async" src="https://tse4.mm.bing.net/th/id/OIP.tnxM2WiEcw9EktiYwsGmIQHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bootstrap"
                     class="rounded-circle" />
                 </div>
               </div>
@@ -510,7 +517,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_cgimagic-jbl660-3dblender-activity-7393176781400395776-Wnw5?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlW8-sBIIZEUB1V7OehMsSC2oouFsvAgvg" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/JBL.jpg" class="card-img-top rounded" alt="Blender Fire Simulation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/JBL.jpg" class="card-img-top rounded" alt="Blender Fire Simulation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">JBL Tune660 Headphone Advertisement</h5>
               <p class="card-text small">3d simulation shared on LinkedIn</p>
@@ -523,7 +530,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-3dblender-fluid-activity-7377197737169055744-l2Rf?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEh5Y64BV56cOSWurJN7CcKMyvi4LJFlMy0" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Donut & Honey-3d simulation shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Donut & Honey-3d simulation shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">Blender Donut & Honey</h5>
               <p class="card-text small">3d simulation shared on linkedIn</p>
@@ -537,7 +544,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-3dblender-fluid-activity-7374343975039746049-utO6?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEh5Y64BV56cOSWurJN7CcKMyvi4LJFlMy0" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender sharbat-3d simulation shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender sharbat-3d simulation shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">Blender sharbat</h5>
               <p class="card-text small">3d simulation shared on linkedIn</p>
@@ -550,7 +557,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-3dblender-fluid-activity-7369257585738227713-IPv-?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEh5Y64BV56cOSWurJN7CcKMyvi4LJFlMy0" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Oreo cream-3d simulation shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Oreo cream-3d simulation shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">Blender Oreo cream</h5>
               <p class="card-text small">3d simulation shared on linkedIn</p>
@@ -563,7 +570,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-aftereffect-3dblender-activity-7332367370293817344-_hJa?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEh5Y64BV56cOSWurJN7CcKMyvi4LJFlMy0" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Burger-3d CGI Video shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Burger-3d CGI Video shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">Blender Burger</h5>
               <p class="card-text small">3d CGI Video shared on linkedIn</p>
@@ -576,7 +583,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-aftereffect-3dblender-activity-7329371832933920768-Mtbn?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEh5Y64BV56cOSWurJN7CcKMyvi4LJFlMy0" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender CocaCola-3d CGI Video shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender CocaCola-3d CGI Video shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">Blender Coca Cola</h5>
               <p class="card-text small">3d CGI Video shared on linkedIn</p>
@@ -589,7 +596,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-aftereffet-3dblender-activity-7326101062308782081-7Rwy?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEh5Y64BV56cOSWurJN7CcKMyvi4LJFlMy0" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Shoe-3d CGI Video shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Shoe-3d CGI Video shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">Blender Shoe</h5>
               <p class="card-text small">3d CGI Video shared on linkedIn</p>
@@ -602,7 +609,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-3dblender-blenderrig-activity-7308523587223642113-HFoK?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEh5Y64BV56cOSWurJN7CcKMyvi4LJFlMy0" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Fish-3d Fish Rig shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Fish-3d Fish Rig shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">Blender Fish</h5>
               <p class="card-text small">3d Fish Rig shared on linkedIn</p>
@@ -615,7 +622,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-3dblender-blenderrig-activity-7299284341996609536-Jz7G?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEh5Y64BV56cOSWurJN7CcKMyvi4LJFlMy0" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Bicycle-3d Bicycle Rig shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Bicycle-3d Bicycle Rig shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">Blender Bicycle</h5>
               <p class="card-text small">3d Bicycle Rig shared on linkedIn</p>
@@ -628,7 +635,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-car-carrig-activity-7296060599917068290-BTI3?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEh5Y64BV56cOSWurJN7CcKMyvi4LJFlMy0" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender JeepCompass-3d car Rig shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender JeepCompass-3d car Rig shared on linkedIn.png" class="card-img-top rounded" alt="Nature Animation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">Blender JeepCompass</h5>
               <p class="card-text small">3d car Rig shared on linkedIn</p>
@@ -641,7 +648,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_beveragecan-blender-blendermodeling-activity-7285023118388039682-V8cy?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEh5Y64BV56cOSWurJN7CcKMyvi4LJFlMy0" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Beverage Can-3d  Model shared on linkedIn.jpg" class="card-img-top rounded" alt="Nature Animation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Beverage Can-3d  Model shared on linkedIn.jpg" class="card-img-top rounded" alt="Nature Animation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">Blender Beverage Can</h5>
               <p class="card-text small">3d Model shared on linkedIn</p>
@@ -654,7 +661,7 @@ knowledge of animation techniques and software.
       <div class="col-sm-6 col-md-4 col-lg-3">
         <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-plasticbottle-pepsibottle-activity-7279081218166394880-o_OG?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEh5Y64BV56cOSWurJN7CcKMyvi4LJFlMy0" target="_blank" class="text-decoration-none">
           <div class="card bg-dark border-0 shadow-sm h-100">
-            <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Pepsi-3d  Model shared on linkedIn.jpg" class="card-img-top rounded" alt="Nature Animation">
+            <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Pepsi-3d  Model shared on linkedIn.jpg" class="card-img-top rounded" alt="Nature Animation">
             <div class="card-body text-white text-center">
               <h5 class="card-title mb-1">Blender Pepsi</h5>
               <p class="card-text small">3d  Model shared on linkedIn</p>
@@ -667,6 +674,196 @@ knowledge of animation techniques and software.
   </div>
 </section>
 
+<section id="logo" class="py-5 bg-dark">
+  <div class="container">
+      <h1 class="text-light display-4">Logo Designs</h1>
+      <p class="text-muted">Creatively made by me</p>
+
+    <div class="scroll-container">
+      <div class="scroll-track">
+        <!-- Repeat cards as needed -->
+         <!-- Duplicate cards for seamless loop -->
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fox Logo.jpg" class="card-img-top" alt="Cinematic Portrait">
+          <div class="card-body">
+            <h5 class="card-title">Fox Logo</h5>
+            <p class="card-text">Using Illustrator N Indesign </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo.jpg" class="card-img-top" alt="Product Mockup">
+          <div class="card-body">
+            <h5 class="card-title">Moch Logo</h5>
+            <p class="card-text">Using Illustrator N Indesign </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo 1.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Company Logo</h5>
+            <p class="card-text">Using Illustrator N Indesign </p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo 2.jpg" class="card-img-top" alt="Cinematic Portrait">
+          <div class="card-body">
+            <h5 class="card-title">Golden Swan Logo</h5>
+            <p class="card-text">Using Illustrator N Indesign </p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo 3.jpg" class="card-img-top" alt="Product Mockup">
+          <div class="card-body">
+            <h5 class="card-title">Company Logo</h5>
+            <p class="card-text">Using Illustrator N Indesign </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo 5.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Company Logo</h5>
+            <p class="card-text">Using Illustrator N Indesign </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Second Logo.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Moch II logo</h5>
+            <p class="card-text">Using Illustrator N Indesign </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/AirFit Logo.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">AirFit Logo</h5>
+            <p class="card-text">Using Illustrator N Indesign </p>
+          </div>
+        </div>
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fly Wing Logo.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Fly Wing Logo</h5>
+            <p class="card-text">Using Illustrator N Indesign </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="advertisements" class="py-5">
+  <div class="container">
+      <h1 class="text-light display-4">Advertisements </h1>
+      <p class="text-muted">Creatively made by me</p>
+
+    <div class="scroll-container">
+      <div class="scroll-track">
+        <!-- Repeat cards as needed -->
+         <!-- Duplicate cards for seamless loop -->
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Social Media Mockup.jpg" class="card-img-top" alt="Cinematic Portrait">
+          <div class="card-body">
+            <h5 class="card-title">Social Media Mockup</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital Marketing Ads.jpg" class="card-img-top" alt="Product Mockup">
+          <div class="card-body">
+            <h5 class="card-title">Digital Marketing Ads</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Sale.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Sale</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Shoes Ads.jpg" class="card-img-top" alt="Cinematic Portrait">
+          <div class="card-body">
+            <h5 class="card-title">Shoes Ads</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Social Ads.jpg" class="card-img-top" alt="Product Mockup">
+          <div class="card-body">
+            <h5 class="card-title">Social Ads</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Pizza Ad.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Pizza Ad</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Vegan Ads.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Vegan Ads</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Amul Ads.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Amul Ad</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign</p>
+          </div>
+        </div>
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Biryani ads.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Biryani Ads</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign</p>
+          </div>
+        </div>
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Briyani poster.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Biryani Poster</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign</p>
+          </div>
+        </div>
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Burger Ads Design For Social Media.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Burger Ads for Social Media</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign</p>
+          </div>
+        </div>
+        <div class="card">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Burger Ads.jpg" class="card-img-top" alt="Festive Campaign">
+          <div class="card-body">
+            <h5 class="card-title">Burger Ads</h5>
+            <p class="card-text">Advertising Using CorelDraw N Indesign</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="photoshop" class="py-5 bg-dark">
   <div class="container">
@@ -678,7 +875,7 @@ knowledge of animation techniques and software.
         <!-- Repeat cards as needed -->
          <!-- Duplicate cards for seamless loop -->
         <div class="card">
-          <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone stamp- Work done In Photoshop.jpg" class="card-img-top" alt="Cinematic Portrait">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone stamp- Work done In Photoshop.jpg" class="card-img-top" alt="Cinematic Portrait">
           <div class="card-body">
             <h5 class="card-title">Clone stamp</h5>
             <p class="card-text"> Work done In Photoshop </p>
@@ -686,7 +883,7 @@ knowledge of animation techniques and software.
         </div>
 
         <div class="card">
-          <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone stamp-Work done In Photoshop.jpg" class="card-img-top" alt="Product Mockup">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone stamp-Work done In Photoshop.jpg" class="card-img-top" alt="Product Mockup">
           <div class="card-body">
             <h5 class="card-title">Clone stamp</h5>
             <p class="card-text">Work done In Photoshop</p>
@@ -694,7 +891,7 @@ knowledge of animation techniques and software.
         </div>
 
         <div class="card">
-          <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image Manipulate -Work done In Photoshop (2).jpg" class="card-img-top" alt="Festive Campaign">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image Manipulate -Work done In Photoshop (2).jpg" class="card-img-top" alt="Festive Campaign">
           <div class="card-body">
             <h5 class="card-title">Digital Painting</h5>
             <p class="card-text"> Work done In Photoshop</p>
@@ -702,7 +899,7 @@ knowledge of animation techniques and software.
         </div>
         
         <div class="card">
-          <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital Painting- Work done In Photoshop (2).jpg" class="card-img-top" alt="Cinematic Portrait">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital Painting- Work done In Photoshop (2).jpg" class="card-img-top" alt="Cinematic Portrait">
           <div class="card-body">
             <h5 class="card-title">Digital Painting</h5>
             <p class="card-text">Work done In Photoshop</p>
@@ -710,7 +907,7 @@ knowledge of animation techniques and software.
         </div>
         
         <div class="card">
-          <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital Painting- Work done In Photoshop.jpg" class="card-img-top" alt="Product Mockup">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital Painting- Work done In Photoshop.jpg" class="card-img-top" alt="Product Mockup">
           <div class="card-body">
             <h5 class="card-title">Image Manipulate</h5>
             <p class="card-text"> Work done In Photoshop</p>
@@ -718,7 +915,7 @@ knowledge of animation techniques and software.
         </div>
 
         <div class="card">
-          <img src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image Manipulate -Work done In Photoshop.jpg" class="card-img-top" alt="Festive Campaign">
+          <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image Manipulate -Work done In Photoshop.jpg" class="card-img-top" alt="Festive Campaign">
           <div class="card-body">
             <h5 class="card-title">Image Manipulate</h5>
             <p class="card-text">Work done In Photoshop</p>
@@ -741,7 +938,7 @@ knowledge of animation techniques and software.
       <div class="container py-5 d-flex align-items-center">
         <div class="row justify-content-center">
           <div class="col-lg-4 mb-3">
-            <img  class="img-fluid rounded align-left" alt="hero"
+            <img loading="lazy" decoding="async"  class="img-fluid rounded align-left" alt="hero"
               src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _1.jpg" />
           </div>
           <div class="col-lg-6">
@@ -759,7 +956,7 @@ knowledge of animation techniques and software.
       <div class="container py-5 d-flex align-items-center">
         <div class="row justify-content-center">
           <div class="col-lg-4 mb-3">
-            <img  class="img-fluid rounded align-left" alt="hero"
+            <img loading="lazy" decoding="async"  class="img-fluid rounded align-left" alt="hero"
               src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _2.jpg" />
           </div>
           <div class="col-lg-6">
@@ -777,7 +974,7 @@ knowledge of animation techniques and software.
       <div class="container py-5 d-flex align-items-center">
         <div class="row justify-content-center">
           <div class="col-lg-4 mb-3">
-            <img  class="img-fluid rounded align-left" alt="hero"
+            <img loading="lazy" decoding="async"  class="img-fluid rounded align-left" alt="hero"
               src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _3.jpg" />
           </div>
           <div class="col-lg-6">
@@ -795,7 +992,7 @@ knowledge of animation techniques and software.
       <div class="container py-5 d-flex align-items-center">
         <div class="row justify-content-center">
           <div class="col-lg-4 mb-3">
-            <img  class="img-fluid rounded align-left" alt="hero"
+            <img loading="lazy" decoding="async"  class="img-fluid rounded align-left" alt="hero"
               src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _4.jpg" />
           </div>
           <div class="col-lg-6">
@@ -813,7 +1010,7 @@ knowledge of animation techniques and software.
       <div class="container py-5 d-flex align-items-center">
         <div class="row justify-content-center">
           <div class="col-lg-4 mb-3">
-            <img  class="img-fluid rounded align-left" alt="hero"
+            <img loading="lazy" decoding="async"  class="img-fluid rounded align-left" alt="hero"
               src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _5.jpg" />
           </div>
           <div class="col-lg-6">
@@ -858,8 +1055,8 @@ knowledge of animation techniques and software.
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Font Awesome for icons -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  
 
 
 </body>
