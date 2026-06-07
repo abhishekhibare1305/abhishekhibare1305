@@ -42,7 +42,7 @@
     }
 
     header {
-      background: rgba(10, 10, 10, 0.489);
+      background: rgb(0, 0, 0);
       backdrop-filter: blur(10px);
       padding: 5px;
       contain: layout style paint;
@@ -228,6 +228,428 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
+    /* Container/Page background context */
+body {
+  background-color: #121212; /* Deep dark background matching the image */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+}
+
+/* Flexible grid management rule forcing a clean 5-column split on desktop screens */
+.skill-flex-item {
+  flex: 1 0 calc(20% - 1rem); /* Standard 5 columns setup layout subtracts gap allowance */
+  min-width: 140px;            /* Mobile fallback baseline width */
+  max-width: 160px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Square Container Style */
+.skill-card-square {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 20px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  /* Added border-color and box-shadow to the transition for smooth scaling animations */
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Dynamic Brand Glow & Cherry Red Border on Hover */
+.skill-card-square:hover {
+  transform: translateY(-5px); /* Micro-move up for responsiveness */
+  border-color: #dc3545 !important; /* Forces precise Cherry Red transition */
+  
+  /* Utilizes your HTML inline --glow-color variable dynamically per square */
+  box-shadow: 0 10px 25px -5px var(--glow-color), 
+              0 8px 16px -6px var(--glow-color);
+}
+
+/* Ambient backdrop aura to strengthen the visual depth */
+.skill-card-square::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, var(--glow-color) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.skill-card-square:hover::before {
+  opacity: 0.08; /* Subtle internal glowing backdrop */
+}
+
+/* Scaled up Icon Dimensions */
+.skill-icon {
+  width: 46px;         /* Increased from 36px */
+  height: 46px;        /* Increased from 36px */
+  border-radius: 10px; /* Proportionate rounding shift */
+  font-weight: 700;
+  font-size: 1.05rem;   /* Crisp typeface alignment scaling */
+}
+
+/* Typography Layout Rules */
+.skill-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.skill-subtitle {
+  font-size: 0.65rem;
+  color: #777777;
+}
+
+/* Color Profiles */
+.icon-ps { background-color: #001c3d; color: #00a8ff; border: 1px solid #00a8ff; }
+.icon-ai { background-color: #261300; color: #ff9a00; border: 1px solid #ff9a00; }
+.icon-id { background-color: #2c0016; color: #ff3399; border: 1px solid #ff3399; }
+.icon-ae { background-color: #1d003b; color: #d199ff; border: 1px solid #d199ff; }
+.icon-pr { background-color: #1f002e; color: #ea77ff; border: 1px solid #ea77ff; }
+.icon-blender { background-color: #2b1704; color: #e87d0d; border: 1px solid #e87d0d; }
+.icon-corel { background-color: #01240e; color: #00af41; border: 1px solid #00af41; }
+.icon-maya { background-color: #02202b; color: #1fbcd3; border: 1px solid #1fbcd3; }
+.icon-silhouette { background-color: #222222; color: #ffffff; border: 1px solid #555555; }
+
+.typing-container {
+  display: inline-block;
+}
+
+.typing-text {
+  overflow: hidden; /* Ensures the hidden characters aren't visible */
+  border-right: 4px solid #dc3545; /* The blinking cursor matching Bootstrap text-danger */
+  white-space: nowrap; /* Keeps the text on a single line */
+  margin: 0 auto;
+  letter-spacing: -0.5px; 
+  
+  /* Ch defines character width width. "Abhishek Hibare" has exactly 15 characters including the space */
+  width: 10ch; 
+  
+  /* Run typing animation, and cursor blinking animation simultaneously */
+  animation: 
+    typing 2s steps(15, end) infinite alternate,
+    blink-caret 0.75s step-end infinite;
+}
+
+/* Typing Effect: Animates the text width from 0 to full length */
+@keyframes typing {
+  0%, 10% { width: 0; }
+  70%, 100% { width: 14ch; }
+}
+
+/* Cursor Blinking Effect: Toggles the border color visibility */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #dc3545; }
+}
+
+.gradient-button {
+            font-family: "Rubik", sans-serif;
+            font-size: 1.1rem;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            backdrop-filter: blur(21px);
+            background:
+                #2c0000c6;
+            transition: all 0.5s ease-out;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .gradient-button:hover {
+            background: linear-gradient(45deg, #cc0000, #161616);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            transform: scale(1.05);
+            padding-left: calc(2.5rem + 5px);
+            padding-right: calc(2.5rem + 10px);
+            color: white;
+        }
+
+        /* Container Cards Design */
+.creative-profile-card, 
+.creative-timeline-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.creative-profile-card:hover,
+.creative-timeline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+/* Subtle Visual Graphic Background Details */
+.card-bg-mesh {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(220, 53, 69, 0.05) 0%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Visual UI Accent Pills */
+.accent-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #dc3545;
+  background: rgba(220, 53, 69, 0.08);
+  padding: 6px 16px;
+  border-radius: 50px;
+}
+
+.text-danger-gradient {
+  background: linear-gradient(135deg, #dc3545 0%, #991b1b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fw-black {
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.lead-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.body-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Timeline Track Elements */
+.custom-track-timeline {
+  position: relative;
+}
+
+/* Continuous vertical timeline connector bar */
+.custom-track-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(to bottom, #dc3545 0%, #e2e8f0 40%, #e2e8f0 100%);
+}
+
+.track-node-item {
+  position: relative;
+  z-index: 1;
+}
+
+/* Timeline node points */
+.node-bullet {
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.node-bullet.node-active {
+  background: #dc3545;
+  border-color: #dc3545;
+  box-shadow: 0 0 15px rgba(220, 53, 69, 0.4);
+}
+
+.node-meta-content {
+  transition: border-color 0.3s ease;
+}
+
+.track-node-item:hover .node-meta-content {
+  border-color: rgba(220, 53, 69, 0.15) !important;
+}
+
+.time-stamp-badge {
+  background-color: #f8f9fa;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+/* Core Footer Backdrop Styling */
+.creative-production-footer {
+  background-color: #0b0b0b; /* Deep slate-black workspace aesthetic */
+  border-top: 1px solid #1a1a1a;
+}
+
+/* Typography Custom Rules */
+.fw-black { font-weight: 900; }
+.tracking-wider { letter-spacing: 1.5px; }
+.text-secondary-dim { color: #444444; }
+.text-secondary-light { color: #a0aec0; }
+.border-dark-edge { border-color: #1f1f1f !important; }
+.bg-dark-card { background-color: #121212; }
+
+/* Background Architectural Grid Lines (Like Blender/Maya Workspaces) */
+.footer-viewport-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Soft Ambient Cherry Red Spot Flare */
+.footer-glow-aura {
+  position: absolute;
+  bottom: -100px;
+  right: -50px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(220, 53, 69, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Production indicator dot */
+.production-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #dc3545; /* Cherry Red */
+  border-radius: 50%;
+}
+
+/* Hover link color changes */
+.hover-link {
+  transition: color 0.25s ease;
+}
+.hover-link:hover {
+  color: #dc3545 !important;
+}
+
+/* Contact Wrapper Icons */
+.contact-icon-wrapper {
+  width: 28px;
+  height: 28px;
+  background-color: #141414;
+  border-radius: 6px;
+  border: 1px solid #1f1f1f;
+}
+
+/* Soft Status Pulse Dot Animation */
+.status-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00ff66; /* Neon green active indicator */
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff66;
+  animation: status-breathing 2s infinite ease-in-out;
+}
+
+@keyframes status-breathing {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 12px #00ff66; }
+}
+
+/* Premium Square Social Portal Glassmorphic Buttons */
+.social-portal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: #121212;
+  border: 1px solid #222222;
+  border-radius: 10px;
+  color: #a0aec0;
+  font-size: 1.15rem;
+  text-decoration: none;
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
+              border-color 0.25s ease, 
+              color 0.25s ease, 
+              box-shadow 0.25s ease;
+}
+
+/* Dynamic Cherry Red Flare on Hover */
+.social-portal-btn:hover {
+  transform: translateY(-4px);
+  border-color: #dc3545;
+  color: #ffffff;
+  background-color: #161616;
+  box-shadow: 0 6px 20px -4px rgba(220, 53, 69, 0.5);
+}
+
+/* Container to establish the 3D space */
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
+  max-width: 100%;
+  perspective: 1000px; /* Gives the 3D depth effect */
+}
+
+/* This element holds the transition and rotation */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+/* Trigger the horizontal flip on hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back sides perfectly on top of each other */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari support */
+  backface-visibility: hidden;        /* Hides the side facing away */
+}
+
+/* Standard styling for both front and back images */
+.flip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Pre-flip the back side so it faces the correct way when rotated */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
   </style>
 
 
@@ -245,7 +667,6 @@
     <nav class="d-flex flex-wrap justify-content-center align-items-center">
       <a class="mx-2 my-1 text-white custom-header" href="#home"><b>Home</b></a>
       <a class="mx-2 my-1 text-white custom-header" href="#about"><b>About Me</b></a>
-      <a class="mx-2 my-1 text-white custom-header" href="#experience"><b>Experience</b></a>
       <a class="mx-2 my-1 text-white custom-header" href="#Softwares"><b>Softwares</b></a>
       <a class="mx-2 my-1 text-white custom-header" href="#portfolio"><b>Projects</b></a>
       <a class="mx-2 my-1 text-white custom-header" href="#certification"><b>Certifications</b></a>
@@ -253,36 +674,62 @@
   </header>
 
 
-  <section id="home" class="d-flex align-items-center min-vh-100 bg-white">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Text Content -->
-        <div class="col-md-7">
-          <h1 class="display-4 fw-bold">Hey, I am </h1>
-          <h1 class="display-4 fw-bold text-danger">Abhishek Hibare</h1>
-          <p class="lead">3D Artist & Motion Graphics</p>
-          <p class="text-muted">experience in Blender, After Effects, Maya and 2d software as well.</p>
+<section id="home" class="d-flex align-items-center min-vh-100 bg-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7 text-center align-items-center">
+        <h1 class="display-4 text-dark fw-bold mb-0 d-inline-block align-middle me-2">Hey, I am</h1>
+        <br>
+        
+        <div class="typing-container d-block d-md-inline-block align-middle">
+          <h1 class="display-4 fw-bold text-danger typing-text">Abhishek Hibare</h1>
+        </div>
+        
+        <p class="text-dark fw-bold lead mt-3">3D Artist & Motion Graphics</p>
+        <p class="text-muted">experience in Blender, After Effects, Maya and 2d software as well.</p>
 
-        </div>
-        <!-- Image -->
-        <div class="col-md-5 text-center">
-          <img loading="lazy" decoding="async" width="400" height="400"
-            src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/abhishek.JPG"
-            class="img-fluid rounded-circle " style="
-                max-width: 100%;
-                height: auto;
-                object-fit: cover;
-                width: 400px;
-                height: 400px;
-              " />
-        </div>
+        <div class="d-flex gap-3 mb-2 mt-4 justify-content-center">
+  <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Abhishek%20Hibare%20CV.pdf"
+     target="_blank"
+     class="btn gradient-button position-relative text-white px-4 py-2 fw-bold shadow-sm">
+     Download CV
+  </a>
+</div>
       </div>
+      
+      <div class="col-md-5 text-center mt-4 mt-md-0 d-flex align-items-center justify-content-center">
+  <!-- Flip Card Container -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      
+      <!-- Front Side (Original Image) -->
+      <div class="flip-card-front">
+        <img loading="lazy" decoding="async" width="400" height="400"
+             src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/abhishek.JPG"
+             class="img-fluid rounded-circle flip-img" alt="Front Image" />
+      </div>
+      
+      <!-- Back Side (New Image) -->
+      <div class="flip-card-back">
+        <img loading="lazy" decoding="async" width="400" height="400"
+             src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Abhishek Hibare emoji.jpg"
+             class="img-fluid rounded-circle flip-img" alt="Back Image" />
+      </div>
+
     </div>
-  </section>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
 
 
   <section class="social-section">
     <div class="social-icons">
+      <a href="https://www.behance.net/abhishekhibare" target="_blank">
+  <i class="fab fa-behance"></i>
+  <span class="social-label">Behance</span>
+</a>
       <a href="https://www.artstation.com/abhishekhibare13" target="_blank">
         <i class="fab fa-artstation"></i>
         <span class="social-label">ArtStation</span>
@@ -303,268 +750,197 @@
   </section>
 
 
-  <section id="about" class="py-5 bg-white">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Image on Left -->
-        <div class="col-md-5 text-center">
-          <img loading="lazy" decoding="async" width="400" height="400"
-            src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/abhishek.JPG" alt="John's Portrait"
-            class="img-fluid rounded-circle " style="
-                max-width: 100%;
-                height: auto;
-                object-fit: cover;
-                width: 400px;
-                height: 400px;
-              " />
-        </div>
-        <!-- Text on Right -->
-        <div class="col-md-6">
-          <h2 class="fw-bold mb-3">About <span class="text-danger">Me</span></h2>
-          <p class="text-muted">
-            As a passionate and detail-oriented <strong>3D Artist & Motion Graphic</strong>, I specialize in bringing
-            digital worlds to life through the power of light and shadow. Ability to create and rig 3D characters and
-            objects, as well as animate them. I can also work on rotoscope live-action footage.
-            As a junior entering the realm of 3d CGI Associate, my
-            objective is to leverage my creativity, passion for
-            lighting & animation, and technical skills to contribute
-            effectively to a dynamic and innovative animation
-            studio. I aim to collaborate with experienced
-            professionals to gain practical industry experience,
-            refine my craft, and continuously expand my
-            knowledge of animation techniques and software.
-          </p>
+<section id="about" class="py-5 bg-light overflow-hidden">
+  <div class="container py-4">
+    <div class="row g-5 align-items-stretch position-relative">
+      
+      <div class="col-lg-6 reveal fade-left d-flex">
+        <div class="creative-profile-card p-4 p-xl-5 w-100 position-relative d-flex flex-column justify-content-between">
+          <div class="card-bg-mesh"></div>
+          
+          <div class="position-relative z-1">
+            <div class="accent-pill mb-3">Who I Am</div>
+            <h2 class="fw-black display-6 text-dark mb-4">About <span class="text-danger-gradient">Me</span></h2>
+            
+            <p class="lead-text text-secondary mb-4">
+              As a passionate and detail-oriented <strong>3D Artist & Motion Graphic Designer</strong>, I specialize in bringing digital worlds to life through the deliberate power of light, shadow, and kinetic energy.
+            </p>
+            
+            <p class="body-text text-muted mb-4">
+              Equipped with a solid foundation to create, optimize, and rig complex 3D characters and structural environmental assets, as well as animate them fluidly across production timelines. I am also proficient at executing precise rotoscoping and live-action tracking integrations.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="py-5 bg-white">
-    <div class="section-header text-center mb-4">
-      <h1 class="text-dark display-4">Experience</h1>
-    </div>
-    <div class="container">
-      <div class="timeline">
+      <div class="col-lg-6 reveal fade-right d-flex">
+        <div class="creative-timeline-card p-4 p-xl-5 w-100 position-relative">
+          <div class="accent-pill mb-3">Milestones</div>
+          <h2 class="fw-black display-6 text-dark mb-5">Experience</h2>
+          
+          <div class="custom-track-timeline">
+            
+            <div class="track-node-item d-flex mb-5">
+              <div class="node-axis-wrapper me-4 position-relative">
+                <div class="node-bullet node-active d-flex align-items-center justify-content-center">
+                  <i class="bi bi-layers-half text-white"></i>
+                </div>
+              </div>
+              <div class="node-meta-content shadow-sm p-4 rounded-3 bg-white border border-light w-100">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
+                  <h5 class="fw-bold text-dark mb-0">CGI Associate</h5>
+                  <span class="badge time-stamp-badge">Sept 2025 - Jan 2026</span>
+                </div>
+                <h6 class="text-danger fw-semibold small mb-2"><i class="bi bi-building me-1"></i> Flexi Ads, Pune</h6>
+                <p class="text-muted small mb-0">Led design and asset generation pathways over a core 6-month operational deployment.</p>
+              </div>
+            </div>
 
-        <div class="timeline-item">
-          <div class="timeline-icon bg-success text-white">
-            <i class="bi bi-briefcase"></i>
-          </div>
-          <div class="timeline-content">
-            <h5>CGI Associate</h5>
-            <p class="text-muted">Flexi Ads, Pune | 6 Months | Sept 2025 - Jan 2026 </p>
+            <div class="track-node-item d-flex mb-5">
+              <div class="node-axis-wrapper me-4 position-relative">
+                <div class="node-bullet d-flex align-items-center justify-content-center">
+                  <i class="bi bi-vector-pen text-secondary"></i>
+                </div>
+              </div>
+              <div class="node-meta-content shadow-sm p-4 rounded-3 bg-white border border-light w-100">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
+                  <h5 class="fw-bold text-dark mb-0">Retouch Artist</h5>
+                  <span class="badge time-stamp-badge">2 Months Internship</span>
+                </div>
+                <h6 class="text-secondary fw-semibold small mb-2"><i class="bi bi-building me-1"></i> HMX Media</h6>
+                <p class="text-muted small mb-0">Executed advanced look-development, mapping passes, and product-finish texture fidelity workflows.</p>
+              </div>
+            </div>
+
+            <div class="track-node-item d-flex">
+              <div class="node-axis-wrapper me-4 position-relative">
+                <div class="node-bullet d-flex align-items-center justify-content-center">
+                  <i class="bi bi-film text-secondary"></i>
+                </div>
+              </div>
+              <div class="node-meta-content shadow-sm p-4 rounded-3 bg-white border border-light w-100">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
+                  <h5 class="fw-bold text-dark mb-0">3D &amp; Motion Graphic Artist</h5>
+                  <span class="badge time-stamp-badge">3 Months Internship</span>
+                </div>
+                <h6 class="text-secondary fw-semibold small mb-2"><i class="bi bi-building me-1"></i> White Walber Communication, Pune</h6>
+                <p class="text-muted small mb-0">Developed composite promotional animations, kinetic typography engine sets, and spatial layout simulations.</p>
+              </div>
+            </div>
+
           </div>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-icon bg-success text-white">
-            <i class="bi bi-briefcase"></i>
-          </div>
-          <div class="timeline-content">
-            <h5>Retouch Artist</h5>
-            <p class="text-muted">HMX Media | 2 Months Internship</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-icon bg-success text-white">
-            <i class="bi bi-code-slash"></i>
-          </div>
-          <div class="timeline-content">
-            <h5>3d & Motion Graphic</h5>
-            <p class="text-muted">White Walber Communication Pune | 3 Months Internship</p>
-          </div>
-        </div>
-
-        <!-- Add more timeline items as needed -->
       </div>
+      
     </div>
-  </section>
+  </div>
+</section>
+
 
 
   <section id="Softwares" class="py-5">
     <div class="section-header text-center display-6 mb-3">
-      <h1 class="text-light display-4">Softwares</h1>
-    </div>
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-lg-3 mb-4">
-          <div class="card border-1px shadow">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center my-3">
-                <div class="progress-circle">
-                  <img loading="lazy" decoding="async"
-                    src="https://tse1.mm.bing.net/th/id/OIP.KPZ6MVgafQOSEu8_2TAhngHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
-                    alt="Bootstrap" class="rounded-circle" />
-                </div>
-              </div>
-              <h4 class="card-title text-uppercase text-dark mb-0 ml-3">
-                After Effect
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-          <div class="card border-1px shadow">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center my-3">
-                <div class="progress-circle">
-                  <img loading="lazy" decoding="async"
-                    src="https://tse2.mm.bing.net/th/id/OIP.aMN8Du2ofByxhyff4eEvAgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
-                    alt="Bootstrap" class="rounded-circle" />
-                </div>
-              </div>
-              <h4 class="card-title text-uppercase text-dark mb-0 ml-3">
-                Blender
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-          <div class="card border-1px shadow">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center my-3">
-                <div class="progress-circle">
-                  <img loading="lazy" decoding="async"
-                    src="https://i.pinimg.com/originals/f5/32/57/f532571da1fe9af84b95e3db5e79d4c3.png" alt="Bootstrap"
-                    class="rounded-circle" />
-                </div>
-              </div>
-              <h4 class="card-title text-uppercase text-dark mb-0 ml-3">
-                coreldraw
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-          <div class="card border-1px shadow">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center my-3">
-                <div class="progress-circle">
-                  <img loading="lazy" decoding="async"
-                    src="https://static.vecteezy.com/system/resources/previews/005/488/339/original/adobe-illustrator-logo-free-vector.jpg"
-                    alt="Bootstrap" class="rounded-circle" />
-                </div>
-              </div>
-              <h4 class="card-title text-uppercase text-dark mb-0 ml-3">
-                Illustrator
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-          <div class="card border-1px shadow">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center my-3">
-                <div class="progress-circle">
-                  <img loading="lazy" decoding="async"
-                    src="https://static.vecteezy.com/system/resources/previews/056/850/883/non_2x/adobe-indesign-logo-on-a-transparent-background-free-png.png"
-                    alt="Bootstrap" class="rounded-circle" />
-                </div>
-              </div>
-              <h4 class="card-title text-uppercase text-dark mb-0 ml-3">
-                InDesign
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-          <div class="card border-1px shadow">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center my-3">
-                <div class="progress-circle">
-                  <img loading="lazy" decoding="async"
-                    src="https://th.bing.com/th/id/R.2c824f701da6cbb85686e993f3d249a3?rik=maNYBlic6A3OqQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fautodesk-maya-logo-png-maya-logo-pluspng-1000x1000.jpg&ehk=G9qOQFavhNZxUbkhGc0Ouzgh8%2fis7OT8RZfRe9Ld8HQ%3d&risl=&pid=ImgRaw&r=0"
-                    alt="Bootstrap" class="rounded-circle" />
-                </div>
-              </div>
-              <h4 class="card-title text-uppercase text-dark mb-0 ml-3">
-                Maya
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-          <div class="card border-1px shadow">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center my-3">
-                <div class="progress-circle">
-                  <img loading="lazy" decoding="async"
-                    src="https://tse2.mm.bing.net/th/id/OIP.aOC9tbP6A9CfWOPfQRZlPAHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
-                    alt="Bootstrap" class="rounded-circle" />
-                </div>
-              </div>
-              <h4 class="card-title text-uppercase text-dark mb-0 ml-3">
-                Photoshop
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-          <div class="card border-1px shadow">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center my-3">
-                <div class="progress-circle">
-                  <img loading="lazy" decoding="async"
-                    src="https://static.vecteezy.com/system/resources/previews/021/963/713/original/adobe-premiere-pro-icon-free-vector.jpg"
-                    alt="Bootstrap" class="rounded-circle" />
-                </div>
-              </div>
-              <h4 class="card-title text-uppercase text-dark mb-0 ml-3">
-                Premiere Pro
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-          <div class="card border-1px shadow">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center my-3">
-                <div class="progress-circle">
-                  <img loading="lazy" decoding="async"
-                    src="https://tse4.mm.bing.net/th/id/OIP.tnxM2WiEcw9EktiYwsGmIQHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
-                    alt="Bootstrap" class="rounded-circle" />
-                </div>
-              </div>
-              <h4 class="card-title text-uppercase text-dark mb-0 ml-3">
-                Silhouette
-              </h4>
-            </div>
-          </div>
-        </div>
+      <h1 class="text-light display-4 fw-bold">Softwares</h1>
+    </div><br>
+    <div class="col-12 col-xl-10 mx-auto">
+  <div class="d-flex flex-wrap justify-content-center gap-3">
+    
+    <div class="skill-flex-item">
+      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #00ff66;">
+        <div class="skill-icon icon-ps d-flex align-items-center justify-content-center mb-2">Ps</div>
+        <h6 class="skill-title  mb-0">Adobe Photoshop</h6>
+        <span class="skill-subtitle">Photo Editing</span>
       </div>
     </div>
+
+    <div class="skill-flex-item">
+      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #8a2be2;">
+        <div class="skill-icon icon-ai d-flex align-items-center justify-content-center mb-2">Ai</div>
+        <h6 class="skill-title mb-0">Adobe Illustrator</h6>
+        <span class="skill-subtitle">Vector Design</span>
+      </div>
+    </div>
+
+    <div class="skill-flex-item">
+      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #d4ff00;">
+        <div class="skill-icon icon-id d-flex align-items-center justify-content-center mb-2">Id</div>
+        <h6 class="skill-title mb-0">Adobe InDesign</h6>
+        <span class="skill-subtitle">Layout Design</span>
+      </div>
+    </div>
+
+    <div class="skill-flex-item">
+      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #9933ff;">
+        <div class="skill-icon icon-ae d-flex align-items-center justify-content-center mb-2">Ae</div>
+        <h6 class="skill-title mb-0">After Effects</h6>
+        <span class="skill-subtitle">Motion & VFX</span>
+      </div>
+    </div>
+
+    <div class="skill-flex-item">
+      <div class="skill-card-square d-flex flex-column align-items-column align-items-center justify-content-center text-center p-2" style="--glow-color: #ccff00;">
+        <div class="skill-icon icon-pr d-flex align-items-center justify-content-center mb-2">Pr</div>
+        <h6 class="skill-title mb-0">Premiere Pro</h6>
+        <span class="skill-subtitle">Video Editing</span>
+      </div>
+    </div>
+
+    <div class="skill-flex-item">
+      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #e87d0d;">
+        <div class="skill-icon icon-blender d-flex align-items-center justify-content-center mb-2">Bl</div>
+        <h6 class="skill-title mb-0">Blender</h6>
+        <span class="skill-subtitle">3D Modeling</span>
+      </div>
+    </div>
+
+    <div class="skill-flex-item">
+      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #00af41;">
+        <div class="skill-icon icon-corel d-flex align-items-center justify-content-center mb-2">Cd</div>
+        <h6 class="skill-title mb-0">CorelDRAW</h6>
+        <span class="skill-subtitle">Vector Graphics</span>
+      </div>
+    </div>
+
+    <div class="skill-flex-item">
+      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #0694a2;">
+        <div class="skill-icon icon-maya d-flex align-items-center justify-content-center mb-2">My</div>
+        <h6 class="skill-title mb-0">Autodesk Maya</h6>
+        <span class="skill-subtitle">3D Animation</span>
+      </div>
+    </div>
+
+    <div class="skill-flex-item">
+      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #ffffff;">
+        <div class="skill-icon icon-silhouette d-flex align-items-center justify-content-center mb-2">Sl</div>
+        <h6 class="skill-title mb-0">Silhouette</h6>
+        <span class="skill-subtitle">Rotoscope & Paint</span>
+      </div>
+    </div>
+
+  </div>
+</div>
   </section>
 
 
   <!-- Unified Portfolio Section (Projects / Logos / Ads / Photoshop) -->
-  <section id="portfolio" class="py-5 bg-white">
+  <section id="portfolio" class="py-5 bg-white ">
     <div class="section-header text-center mb-4">
-      <h1 class="text-dark display-4">Projects</h1>
-      <p class="text-muted">Projects, Logos, Advertisements and Photoshop work — filtered and showcased.</p>
+      <h1 class="fw-bold text-dark display-4">Projects</h1>
     </div>
 
-    <div class="container">
+    <div class="container ">
       <!-- Filter buttons -->
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
-        <div class="btn-group" role="group" aria-label="portfolio filters">
-          <button class="btn btn-outline-danger mr-3 active" data-filter="all">All</button>
-          <button class="btn btn-outline-danger mr-3" data-filter="projects">Projects</button>
-          <button class="btn btn-outline-danger mr-3" data-filter="logos">Logos</button>
-          <button class="btn btn-outline-danger mr-3" data-filter="ads">Advertisements</button>
-          <button class="btn btn-outline-danger mr-3" data-filter="photoshop">Photoshop</button>
-          <button class="btn btn-outline-danger" data-filter="motion">Motion Graphics</button>
-        </div>
-      </div>
+      <div class="col-12 col-md-10 col-lg-9 mb-4 mx-auto">
+  <div class="btn-group flex-wrap justify-content-center w-100" role="group" aria-label="portfolio filters">
+    <button class="btn btn-outline-danger active mr-2 mt-2" data-filter="all">All</button>
+    <button class="btn btn-outline-danger mr-2 mt-2" data-filter="projects">3D Projects</button>
+    <button class="btn btn-outline-danger mr-2 mt-2" data-filter="logos">Logos</button>
+    <button class="btn btn-outline-danger mr-2 mt-2" data-filter="ads">Advertisements</button>
+    <button class="btn btn-outline-danger mr-2 mt-2" data-filter="photoshop">Photoshop</button>
+    <button class="btn btn-outline-danger mr-2 mt-2" data-filter="motion">Motion Graphics</button>
+  </div>
+</div>
+
 
       <!-- Grid -->
       <div class="row g-4" id="portfolio-grid">
@@ -1244,11 +1620,9 @@
               <img
                 src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _1.jpg"
                 class="card-img-top img-fluid" alt="Specialisation In 3D Asset">
-              <div class="overlay d-flex align-items-center justify-content-center">
-                <span class="overlay-text">View Certificate</span>
-              </div>
+              
             </div>
-            <div class="card-body text-center">
+            <div class="bg-light card-body text-center">
               <h6 class="fw-bold mt-2">Specialisation In 3D Asset</h6>
             </div>
           </div>
@@ -1261,11 +1635,9 @@
               <img
                 src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _2.jpg"
                 class="card-img-top img-fluid" alt="3D Edge Plus with Animation Specialisation">
-              <div class="overlay d-flex align-items-center justify-content-center">
-                <span class="overlay-text">View Certificate</span>
-              </div>
+              
             </div>
-            <div class="card-body text-center">
+            <div class="bg-light card-body text-center">
               <h6 class="fw-bold mt-2">3D Edge Plus with Animation Specialisation</h6>
             </div>
           </div>
@@ -1278,11 +1650,9 @@
               <img
                 src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _3.jpg"
                 class="card-img-top img-fluid" alt="MCL Certificate In Digital Painting">
-              <div class="overlay d-flex align-items-center justify-content-center">
-                <span class="overlay-text">View Certificate</span>
-              </div>
+              
             </div>
-            <div class="card-body text-center">
+            <div class="bg-light card-body text-center">
               <h6 class="fw-bold mt-2">MCL Certificate In Digital Painting</h6>
             </div>
           </div>
@@ -1295,11 +1665,9 @@
               <img
                 src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _4.jpg"
                 class="card-img-top img-fluid" alt="24FPS Best CG Lighting">
-              <div class="overlay d-flex align-items-center justify-content-center">
-                <span class="overlay-text">View Certificate</span>
-              </div>
+              
             </div>
-            <div class="card-body text-center">
+            <div class="bg-light card-body text-center">
               <h6 class="fw-bold mt-2">24FPS Best CG Lighting</h6>
             </div>
           </div>
@@ -1312,11 +1680,9 @@
               <img
                 src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _5.jpg"
                 class="card-img-top img-fluid" alt="24FPS Best Digital Painting">
-              <div class="overlay d-flex align-items-center justify-content-center">
-                <span class="overlay-text">View Certificate</span>
-              </div>
+              
             </div>
-            <div class="card-body text-center">
+            <div class="bg-light card-body text-center">
               <h6 class="fw-bold mt-2">24FPS Best Digital Painting</h6>
             </div>
           </div>
@@ -1372,50 +1738,87 @@
 
 
   <!-- Footer Section -->
-  <footer class=" text-light pt-5 pb-4">
-    <div class="container">
-      <div class="row">
+<footer class="creative-production-footer text-light pt-5 pb-4 position-relative overflow-hidden">
+  <!-- 3D Perspective Grid Visual Overlay -->
+  <div class="footer-viewport-grid"></div>
+  <!-- Abstract Glow Aura -->
+  <div class="footer-glow-aura"></div>
 
-        <!-- Brand / About -->
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-bold text-uppercase mb-3">Abhishek Hibare</h5>
-          <p class="small">3D Artist & Motion Graphics Designer passionate about creating visually compelling digital
-            experiences.</p>
+  <div class="container position-relative z-2">
+    <div class="row gy-4 justify-content-between">
+
+      <!-- Brand / Creator Profile Block -->
+      <div class="col-md-4">
+        <div class="d-flex align-items-center mb-3">
+          <div class="production-dot me-2"></div>
+          <h5 class="fw-black text-uppercase tracking-wider mb-0">Abhishek Hibare</h5>
         </div>
+        <p class="text-muted small lh-lg">
+          3D Artist &amp; Motion Graphics Designer passionate about manipulating digital environments, directional lighting, and kinetic motion pathways to construct compelling spatial experiences.
+        </p>
 
-        <!-- Contact Info -->
-        <div class="col-md-3 mb-4">
-          <h5 class="fw-bold text-uppercase mb-3">Contact</h5>
-          <ul class="list-unstyled small">
-            <li><i class="fas fa-envelope me-2"></i> abhishekhibare1305@gmail.com</li>
-            <li><i class="fas fa-map-marker-alt me-2"></i> Solapur, Maharashtra, India</li>
-          </ul>
-        </div>
+      </div>
 
-        <!-- Social Links -->
-        <div class="col-md-5 mb-4 text-md-end">
-          <h5 class="fw-bold text-uppercase mb-3">Connect</h5>
-          <a href="https://www.artstation.com/abhishekhibare13" target="_blank">
-        <i class="fab fa-artstation"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/abhishek-hibare-a6320822a/" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://www.instagram.com/artist_4ever__?igsh=Ymt1eHFrcGZzZTBk&utm_source=qr" target="_blank">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/@AbhitheArtist_1305" target="_blank">
-        <i class="fab fa-youtube"></i>
-      </a>
+      <!-- Live Contact Terminal Block -->
+      <div class="col-md-3">
+        <h5 class="fw-bold text-uppercase tracking-wider text-secondary-light mb-3">Contact Channel</h5>
+        <ul class="list-unstyled small">
+          <li class="mb-3 d-flex align-items-center">
+            <span class="contact-icon-wrapper d-flex align-items-center justify-content-center me-2">
+              <i class="fas fa-envelope text-danger"></i>
+            </span>
+            <a href="mailto:abhishekhibare1305@gmail.com" class="text-muted text-decoration-none hover-link">abhishekhibare1305@gmail.com</a>
+          </li>
+          <li class="d-flex align-items-center">
+            <span class="contact-icon-wrapper d-flex align-items-center justify-content-center me-2">
+              <i class="fas fa-map-marker-alt text-danger"></i>
+            </span>
+            <span class="text-muted">Solapur, Maharashtra, India</span>
+          </li>
+        </ul>
+        
+        <!-- Interactive Availability Status Indicator -->
+        <div class="d-inline-flex align-items-center mt-3 bg-dark-card px-3 py-1 rounded-pill border border-dark-edge">
+          <span class="status-pulse-dot me-2"></span>
+          <span class="font-monospace text-muted" style="font-size: 0.72rem; uppercase">Status: Available for CGI Briefs</span>
         </div>
       </div>
 
-      <hr class="border-secondary">
-      <p class="text-center small mb-0">
-        &copy; <span id="year"></span> Vaibhaavw — All Rights Reserved.
-      </p>
+      <!-- Social / Creative Portal Links -->
+      <div class="col-md-4 text-md-end">
+        <h5 class="fw-bold text-uppercase tracking-wider text-secondary-light mb-3">Creative Portals</h5>
+        <div class="d-flex gap-2 justify-content-start justify-content-md-end flex-wrap">
+          <a href="https://www.behance.net/abhishekhibare" target="_blank" class="social-portal-btn" title="Behance">
+            <i class="fab fa-behance"></i>
+          </a>
+          <a href="https://www.artstation.com/abhishekhibare13" target="_blank" class="social-portal-btn" title="ArtStation">
+            <i class="fab fa-artstation"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/abhishek-hibare-a6320822a/" target="_blank" class="social-portal-btn" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/artist_4ever__?igsh=Ymt1eHFrcGZzZTBk&amp;utm_source=qr" target="_blank" class="social-portal-btn" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/@AbhitheArtist_1305" target="_blank" class="social-portal-btn" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
     </div>
-  </footer>
+
+    <!-- Divider and Attribution -->
+    <hr class="border-dark-edge my-4">
+    <div class="row align-items-center justify-content-between small font-monospace text-muted">
+      <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+        &copy; <span id="footer-year">2026</span> Vaibhaavw — Production System.
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
 
 
   <script>
