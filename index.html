@@ -1580,19 +1580,8 @@ body {
           applyFilter(activeButton.getAttribute('data-filter'));
         }
 
-        // Lightbox modal
-        const modal = new bootstrap.Modal(document.getElementById('portfolioModal'));
-        document.querySelectorAll('.portfolio-link').forEach(link => {
-          link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const img = this.querySelector('img');
-            const src = this.getAttribute('href') || img.src;
-            const caption = this.closest('.card').querySelector('.card-title')?.innerText || '';
-            document.getElementById('portfolioModalImg').src = src;
-            document.getElementById('portfolioModalCaption').innerText = caption;
-            modal.show();
-          });
-        });
+        // Lightbox disabled: portfolio links should open normally (no interception)
+        // If you want image previews again, we can re-enable a conditional modal handler.
       });
     </script>
   </section>
@@ -1780,7 +1769,7 @@ body {
         <!-- Interactive Availability Status Indicator -->
         <div class="d-inline-flex align-items-center mt-3 bg-dark-card px-3 py-1 rounded-pill border border-dark-edge">
           <span class="status-pulse-dot me-2"></span>
-          <span class="font-monospace text-muted" style="font-size: 0.72rem; uppercase">Status: Available for CGI Briefs</span>
+          <span class="font-monospace text-muted" style="font-size: 0.72rem; uppercase">Status: Available for Briefs</span>
         </div>
       </div>
 
