@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhishek Hibare | Portfolio</title>
-  <link rel="icon" type="image/svg+xml" href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/logo.png" />
+  <link rel="icon" type="image/svg+xml"
+    href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/logo.png" />
 
   <!-- DNS Prefetch and Preconnect for faster image loading -->
   <link rel="preconnect" href="https://github.com">
@@ -228,428 +229,536 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
+
     /* Container/Page background context */
-body {
-  background-color: #121212; /* Deep dark background matching the image */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
-}
+    body {
+      background-color: #121212;
+      /* Deep dark background matching the image */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+    }
 
-/* Flexible grid management rule forcing a clean 5-column split on desktop screens */
-.skill-flex-item {
-  flex: 1 0 calc(20% - 1rem); /* Standard 5 columns setup layout subtracts gap allowance */
-  min-width: 140px;            /* Mobile fallback baseline width */
-  max-width: 160px;
-  display: flex;
-  justify-content: center;
-}
+    /* Flexible grid management rule forcing a clean 5-column split on desktop screens */
+    .skill-flex-item {
+      flex: 1 0 calc(20% - 1rem);
+      /* Standard 5 columns setup layout subtracts gap allowance */
+      min-width: 140px;
+      /* Mobile fallback baseline width */
+      max-width: 160px;
+      display: flex;
+      justify-content: center;
+    }
 
-/* Square Container Style */
-.skill-card-square {
-  background-color: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 20px;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  position: relative;
-  /* Added border-color and box-shadow to the transition for smooth scaling animations */
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-              border-color 0.3s ease, 
-              box-shadow 0.3s ease;
-  overflow: hidden;
-  z-index: 1;
-}
+    /* Square Container Style */
+    .skill-card-square {
+      background-color: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 20px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      /* Added border-color and box-shadow to the transition for smooth scaling animations */
+      transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+      overflow: hidden;
+      z-index: 1;
+    }
 
-/* Dynamic Brand Glow & Cherry Red Border on Hover */
-.skill-card-square:hover {
-  transform: translateY(-5px); /* Micro-move up for responsiveness */
-  border-color: #dc3545 !important; /* Forces precise Cherry Red transition */
-  
-  /* Utilizes your HTML inline --glow-color variable dynamically per square */
-  box-shadow: 0 10px 25px -5px var(--glow-color), 
-              0 8px 16px -6px var(--glow-color);
-}
+    /* Dynamic Brand Glow & Cherry Red Border on Hover */
+    .skill-card-square:hover {
+      transform: translateY(-5px);
+      /* Micro-move up for responsiveness */
+      border-color: #dc3545 !important;
+      /* Forces precise Cherry Red transition */
 
-/* Ambient backdrop aura to strengthen the visual depth */
-.skill-card-square::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, var(--glow-color) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-  pointer-events: none;
-}
+      /* Utilizes your HTML inline --glow-color variable dynamically per square */
+      box-shadow: 0 10px 25px -5px var(--glow-color),
+        0 8px 16px -6px var(--glow-color);
+    }
 
-.skill-card-square:hover::before {
-  opacity: 0.08; /* Subtle internal glowing backdrop */
-}
+    /* Ambient backdrop aura to strengthen the visual depth */
+    .skill-card-square::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, var(--glow-color) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+      pointer-events: none;
+    }
 
-/* Scaled up Icon Dimensions */
-.skill-icon {
-  width: 46px;         /* Increased from 36px */
-  height: 46px;        /* Increased from 36px */
-  border-radius: 10px; /* Proportionate rounding shift */
-  font-weight: 700;
-  font-size: 1.05rem;   /* Crisp typeface alignment scaling */
-}
+    .skill-card-square:hover::before {
+      opacity: 0.08;
+      /* Subtle internal glowing backdrop */
+    }
 
-/* Typography Layout Rules */
-.skill-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #ffffff;
-}
+    /* Scaled up Icon Dimensions */
+    .skill-icon {
+      width: 46px;
+      /* Increased from 36px */
+      height: 46px;
+      /* Increased from 36px */
+      border-radius: 10px;
+      /* Proportionate rounding shift */
+      font-weight: 700;
+      font-size: 1.05rem;
+      /* Crisp typeface alignment scaling */
+    }
 
-.skill-subtitle {
-  font-size: 0.65rem;
-  color: #777777;
-}
+    /* Typography Layout Rules */
+    .skill-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
 
-/* Color Profiles */
-.icon-ps { background-color: #001c3d; color: #00a8ff; border: 1px solid #00a8ff; }
-.icon-ai { background-color: #261300; color: #ff9a00; border: 1px solid #ff9a00; }
-.icon-id { background-color: #2c0016; color: #ff3399; border: 1px solid #ff3399; }
-.icon-ae { background-color: #1d003b; color: #d199ff; border: 1px solid #d199ff; }
-.icon-pr { background-color: #1f002e; color: #ea77ff; border: 1px solid #ea77ff; }
-.icon-blender { background-color: #2b1704; color: #e87d0d; border: 1px solid #e87d0d; }
-.icon-corel { background-color: #01240e; color: #00af41; border: 1px solid #00af41; }
-.icon-maya { background-color: #02202b; color: #1fbcd3; border: 1px solid #1fbcd3; }
-.icon-silhouette { background-color: #222222; color: #ffffff; border: 1px solid #555555; }
+    .skill-subtitle {
+      font-size: 0.65rem;
+      color: #777777;
+    }
 
-.typing-container {
-  display: inline-block;
-}
+    /* Color Profiles */
+    .icon-ps {
+      background-color: #001c3d;
+      color: #00a8ff;
+      border: 1px solid #00a8ff;
+    }
 
-.typing-text {
-  overflow: hidden; /* Ensures the hidden characters aren't visible */
-  border-right: 4px solid #dc3545; /* The blinking cursor matching Bootstrap text-danger */
-  white-space: nowrap; /* Keeps the text on a single line */
-  margin: 0 auto;
-  letter-spacing: -0.5px; 
-  
-  /* Ch defines character width width. "Abhishek Hibare" has exactly 15 characters including the space */
-  width: 10ch; 
-  
-  /* Run typing animation, and cursor blinking animation simultaneously */
-  animation: 
-    typing 2s steps(15, end) infinite alternate,
-    blink-caret 0.75s step-end infinite;
-}
+    .icon-ai {
+      background-color: #261300;
+      color: #ff9a00;
+      border: 1px solid #ff9a00;
+    }
 
-/* Typing Effect: Animates the text width from 0 to full length */
-@keyframes typing {
-  0%, 10% { width: 0; }
-  70%, 100% { width: 14ch; }
-}
+    .icon-id {
+      background-color: #2c0016;
+      color: #ff3399;
+      border: 1px solid #ff3399;
+    }
 
-/* Cursor Blinking Effect: Toggles the border color visibility */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #dc3545; }
-}
+    .icon-ae {
+      background-color: #1d003b;
+      color: #d199ff;
+      border: 1px solid #d199ff;
+    }
 
-.gradient-button {
-            font-family: "Rubik", sans-serif;
-            font-size: 1.1rem;
-            padding: 0.8rem 2.5rem;
-            border-radius: 50px;
-            backdrop-filter: blur(21px);
-            background:
-                #2c0000c6;
-            transition: all 0.5s ease-out;
-            overflow: hidden;
-            position: relative;
-            text-decoration: none;
-        }
+    .icon-pr {
+      background-color: #1f002e;
+      color: #ea77ff;
+      border: 1px solid #ea77ff;
+    }
 
-        .gradient-button:hover {
-            background: linear-gradient(45deg, #cc0000, #161616);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-            transform: scale(1.05);
-            padding-left: calc(2.5rem + 5px);
-            padding-right: calc(2.5rem + 10px);
-            color: white;
-        }
+    .icon-blender {
+      background-color: #2b1704;
+      color: #e87d0d;
+      border: 1px solid #e87d0d;
+    }
 
-        /* Container Cards Design */
-.creative-profile-card, 
-.creative-timeline-card {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 24px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.02);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .icon-corel {
+      background-color: #01240e;
+      color: #00af41;
+      border: 1px solid #00af41;
+    }
 
-.creative-profile-card:hover,
-.creative-timeline-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-}
+    .icon-maya {
+      background-color: #02202b;
+      color: #1fbcd3;
+      border: 1px solid #1fbcd3;
+    }
 
-/* Subtle Visual Graphic Background Details */
-.card-bg-mesh {
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(220, 53, 69, 0.05) 0%, rgba(255,255,255,0) 70%);
-  pointer-events: none;
-  z-index: 0;
-}
+    .icon-silhouette {
+      background-color: #222222;
+      color: #ffffff;
+      border: 1px solid #555555;
+    }
 
-/* Visual UI Accent Pills */
-.accent-pill {
-  display: inline-block;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
-  color: #dc3545;
-  background: rgba(220, 53, 69, 0.08);
-  padding: 6px 16px;
-  border-radius: 50px;
-}
+    .typing-container {
+      display: inline-block;
+    }
 
-.text-danger-gradient {
-  background: linear-gradient(135deg, #dc3545 0%, #991b1b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+    .typing-text {
+      overflow: hidden;
+      /* Ensures the hidden characters aren't visible */
+      border-right: 4px solid #dc3545;
+      /* The blinking cursor matching Bootstrap text-danger */
+      white-space: nowrap;
+      /* Keeps the text on a single line */
+      margin: 0 auto;
+      letter-spacing: -0.5px;
 
-.fw-black {
-  font-weight: 800;
-  letter-spacing: -1px;
-}
+      /* Ch defines character width width. "Abhishek Hibare" has exactly 15 characters including the space */
+      width: 10ch;
 
-.lead-text {
-  font-size: 1.15rem;
-  line-height: 1.7;
-}
+      /* Run typing animation, and cursor blinking animation simultaneously */
+      animation:
+        typing 2s steps(15, end) infinite alternate,
+        blink-caret 0.75s step-end infinite;
+    }
 
-.body-text {
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
+    /* Typing Effect: Animates the text width from 0 to full length */
+    @keyframes typing {
 
-/* Timeline Track Elements */
-.custom-track-timeline {
-  position: relative;
-}
+      0%,
+      10% {
+        width: 0;
+      }
 
-/* Continuous vertical timeline connector bar */
-.custom-track-timeline::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 10px;
-  bottom: 10px;
-  width: 2px;
-  background: linear-gradient(to bottom, #dc3545 0%, #e2e8f0 40%, #e2e8f0 100%);
-}
+      70%,
+      100% {
+        width: 14ch;
+      }
+    }
 
-.track-node-item {
-  position: relative;
-  z-index: 1;
-}
+    /* Cursor Blinking Effect: Toggles the border color visibility */
+    @keyframes blink-caret {
 
-/* Timeline node points */
-.node-bullet {
-  width: 42px;
-  height: 42px;
-  background: #ffffff;
-  border: 2px solid #e2e8f0;
-  border-radius: 50%;
-  font-size: 1.05rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
+      from,
+      to {
+        border-color: transparent
+      }
 
-.node-bullet.node-active {
-  background: #dc3545;
-  border-color: #dc3545;
-  box-shadow: 0 0 15px rgba(220, 53, 69, 0.4);
-}
+      50% {
+        border-color: #dc3545;
+      }
+    }
 
-.node-meta-content {
-  transition: border-color 0.3s ease;
-}
+    .gradient-button {
+      font-family: "Rubik", sans-serif;
+      font-size: 1.1rem;
+      padding: 0.8rem 2.5rem;
+      border-radius: 50px;
+      backdrop-filter: blur(21px);
+      background:
+        #2c0000c6;
+      transition: all 0.5s ease-out;
+      overflow: hidden;
+      position: relative;
+      text-decoration: none;
+    }
 
-.track-node-item:hover .node-meta-content {
-  border-color: rgba(220, 53, 69, 0.15) !important;
-}
+    .gradient-button:hover {
+      background: linear-gradient(45deg, #cc0000, #161616);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      transform: scale(1.05);
+      padding-left: calc(2.5rem + 5px);
+      padding-right: calc(2.5rem + 10px);
+      color: white;
+    }
 
-.time-stamp-badge {
-  background-color: #f8f9fa;
-  color: #4a5568;
-  border: 1px solid #e2e8f0;
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-}
+    /* Container Cards Design */
+    .creative-profile-card,
+    .creative-timeline-card {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 24px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.02);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-/* Core Footer Backdrop Styling */
-.creative-production-footer {
-  background-color: #0b0b0b; /* Deep slate-black workspace aesthetic */
-  border-top: 1px solid #1a1a1a;
-}
+    .creative-profile-card:hover,
+    .creative-timeline-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    }
 
-/* Typography Custom Rules */
-.fw-black { font-weight: 900; }
-.tracking-wider { letter-spacing: 1.5px; }
-.text-secondary-dim { color: #444444; }
-.text-secondary-light { color: #a0aec0; }
-.border-dark-edge { border-color: #1f1f1f !important; }
-.bg-dark-card { background-color: #121212; }
+    /* Subtle Visual Graphic Background Details */
+    .card-bg-mesh {
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(220, 53, 69, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-/* Background Architectural Grid Lines (Like Blender/Maya Workspaces) */
-.footer-viewport-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  z-index: 0;
-  pointer-events: none;
-}
+    /* Visual UI Accent Pills */
+    .accent-pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: #dc3545;
+      background: rgba(220, 53, 69, 0.08);
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
 
-/* Soft Ambient Cherry Red Spot Flare */
-.footer-glow-aura {
-  position: absolute;
-  bottom: -100px;
-  right: -50px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(220, 53, 69, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
+    .text-danger-gradient {
+      background: linear-gradient(135deg, #dc3545 0%, #991b1b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-/* Production indicator dot */
-.production-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #dc3545; /* Cherry Red */
-  border-radius: 50%;
-}
+    .fw-black {
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
 
-/* Hover link color changes */
-.hover-link {
-  transition: color 0.25s ease;
-}
-.hover-link:hover {
-  color: #dc3545 !important;
-}
+    .lead-text {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
 
-/* Contact Wrapper Icons */
-.contact-icon-wrapper {
-  width: 28px;
-  height: 28px;
-  background-color: #141414;
-  border-radius: 6px;
-  border: 1px solid #1f1f1f;
-}
+    .body-text {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
 
-/* Soft Status Pulse Dot Animation */
-.status-pulse-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #00ff66; /* Neon green active indicator */
-  border-radius: 50%;
-  box-shadow: 0 0 8px #00ff66;
-  animation: status-breathing 2s infinite ease-in-out;
-}
+    /* Timeline Track Elements */
+    .custom-track-timeline {
+      position: relative;
+    }
 
-@keyframes status-breathing {
-  0%, 100% { opacity: 0.4; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 12px #00ff66; }
-}
+    /* Continuous vertical timeline connector bar */
+    .custom-track-timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: linear-gradient(to bottom, #dc3545 0%, #e2e8f0 40%, #e2e8f0 100%);
+    }
 
-/* Premium Square Social Portal Glassmorphic Buttons */
-.social-portal-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  background-color: #121212;
-  border: 1px solid #222222;
-  border-radius: 10px;
-  color: #a0aec0;
-  font-size: 1.15rem;
-  text-decoration: none;
-  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
-              border-color 0.25s ease, 
-              color 0.25s ease, 
-              box-shadow 0.25s ease;
-}
+    .track-node-item {
+      position: relative;
+      z-index: 1;
+    }
 
-/* Dynamic Cherry Red Flare on Hover */
-.social-portal-btn:hover {
-  transform: translateY(-4px);
-  border-color: #dc3545;
-  color: #ffffff;
-  background-color: #161616;
-  box-shadow: 0 6px 20px -4px rgba(220, 53, 69, 0.5);
-}
+    /* Timeline node points */
+    .node-bullet {
+      width: 42px;
+      height: 42px;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 50%;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
 
-/* Container to establish the 3D space */
-.flip-card {
-  background-color: transparent;
-  width: 400px;
-  height: 400px;
-  max-width: 100%;
-  perspective: 1000px; /* Gives the 3D depth effect */
-}
+    .node-bullet.node-active {
+      background: #dc3545;
+      border-color: #dc3545;
+      box-shadow: 0 0 15px rgba(220, 53, 69, 0.4);
+    }
 
-/* This element holds the transition and rotation */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s ease-in-out;
-  transform-style: preserve-3d;
-}
+    .node-meta-content {
+      transition: border-color 0.3s ease;
+    }
 
-/* Trigger the horizontal flip on hover */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
+    .track-node-item:hover .node-meta-content {
+      border-color: rgba(220, 53, 69, 0.15) !important;
+    }
 
-/* Position the front and back sides perfectly on top of each other */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari support */
-  backface-visibility: hidden;        /* Hides the side facing away */
-}
+    .time-stamp-badge {
+      background-color: #f8f9fa;
+      color: #4a5568;
+      border: 1px solid #e2e8f0;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+    }
 
-/* Standard styling for both front and back images */
-.flip-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    /* Core Footer Backdrop Styling */
+    .creative-production-footer {
+      background-color: #0b0b0b;
+      /* Deep slate-black workspace aesthetic */
+      border-top: 1px solid #1a1a1a;
+    }
 
-/* Pre-flip the back side so it faces the correct way when rotated */
-.flip-card-back {
-  transform: rotateY(180deg);
-}
+    /* Typography Custom Rules */
+    .fw-black {
+      font-weight: 900;
+    }
+
+    .tracking-wider {
+      letter-spacing: 1.5px;
+    }
+
+    .text-secondary-dim {
+      color: #444444;
+    }
+
+    .text-secondary-light {
+      color: #a0aec0;
+    }
+
+    .border-dark-edge {
+      border-color: #1f1f1f !important;
+    }
+
+    .bg-dark-card {
+      background-color: #121212;
+    }
+
+    /* Background Architectural Grid Lines (Like Blender/Maya Workspaces) */
+    .footer-viewport-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Soft Ambient Cherry Red Spot Flare */
+    .footer-glow-aura {
+      position: absolute;
+      bottom: -100px;
+      right: -50px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(220, 53, 69, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Production indicator dot */
+    .production-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #dc3545;
+      /* Cherry Red */
+      border-radius: 50%;
+    }
+
+    /* Hover link color changes */
+    .hover-link {
+      transition: color 0.25s ease;
+    }
+
+    .hover-link:hover {
+      color: #dc3545 !important;
+    }
+
+    /* Contact Wrapper Icons */
+    .contact-icon-wrapper {
+      width: 28px;
+      height: 28px;
+      background-color: #141414;
+      border-radius: 6px;
+      border: 1px solid #1f1f1f;
+    }
+
+    /* Soft Status Pulse Dot Animation */
+    .status-pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #00ff66;
+      /* Neon green active indicator */
+      border-radius: 50%;
+      box-shadow: 0 0 8px #00ff66;
+      animation: status-breathing 2s infinite ease-in-out;
+    }
+
+    @keyframes status-breathing {
+
+      0%,
+      100% {
+        opacity: 0.4;
+        transform: scale(0.9);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.1);
+        box-shadow: 0 0 12px #00ff66;
+      }
+    }
+
+    /* Premium Square Social Portal Glassmorphic Buttons */
+    .social-portal-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background-color: #121212;
+      border: 1px solid #222222;
+      border-radius: 10px;
+      color: #a0aec0;
+      font-size: 1.15rem;
+      text-decoration: none;
+      transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+        border-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    /* Dynamic Cherry Red Flare on Hover */
+    .social-portal-btn:hover {
+      transform: translateY(-4px);
+      border-color: #dc3545;
+      color: #ffffff;
+      background-color: #161616;
+      box-shadow: 0 6px 20px -4px rgba(220, 53, 69, 0.5);
+    }
+
+    /* Container to establish the 3D space */
+    .flip-card {
+      background-color: transparent;
+      width: 400px;
+      height: 400px;
+      max-width: 100%;
+      perspective: 1000px;
+      /* Gives the 3D depth effect */
+    }
+
+    /* This element holds the transition and rotation */
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s ease-in-out;
+      transform-style: preserve-3d;
+    }
+
+    /* Trigger the horizontal flip on hover */
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Position the front and back sides perfectly on top of each other */
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      /* Safari support */
+      backface-visibility: hidden;
+      /* Hides the side facing away */
+    }
+
+    /* Standard styling for both front and back images */
+    .flip-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Pre-flip the back side so it faces the correct way when rotated */
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
   </style>
 
 
@@ -674,62 +783,61 @@ body {
   </header>
 
 
-<section id="home" class="d-flex align-items-center min-vh-100 bg-white">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-7 text-center align-items-center">
-        <h1 class="display-4 text-dark fw-bold mb-0 d-inline-block align-middle me-2">Hey, I am</h1>
-        <br>
-        
-        <div class="typing-container d-block d-md-inline-block align-middle">
-          <h1 class="display-4 fw-bold text-danger typing-text">Abhishek Hibare</h1>
+  <section id="home" class="d-flex align-items-center min-vh-100 bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-7 text-center align-items-center">
+          <h1 class="display-4 text-dark fw-bold mb-0 d-inline-block align-middle me-2">Hey, I am</h1>
+          <br>
+
+          <div class="typing-container d-block d-md-inline-block align-middle">
+            <h1 class="display-4 fw-bold text-danger typing-text">Abhishek Hibare</h1>
+          </div>
+
+          <p class="text-dark fw-bold lead mt-3">3D Artist & Motion Graphics</p>
+          <p class="text-muted">experience in Blender, After Effects, Maya and 2d software as well.</p>
+
+          <div class="d-flex gap-3 mb-2 mt-4 justify-content-center">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Abhishek%20Hibare%20CV.pdf"
+              target="_blank" class="btn gradient-button position-relative text-white px-4 py-2 fw-bold shadow-sm">
+              Download CV
+            </a>
+          </div>
         </div>
-        
-        <p class="text-dark fw-bold lead mt-3">3D Artist & Motion Graphics</p>
-        <p class="text-muted">experience in Blender, After Effects, Maya and 2d software as well.</p>
 
-        <div class="d-flex gap-3 mb-2 mt-4 justify-content-center">
-  <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Abhishek%20Hibare%20CV.pdf"
-     target="_blank"
-     class="btn gradient-button position-relative text-white px-4 py-2 fw-bold shadow-sm">
-     Download CV
-  </a>
-</div>
-      </div>
-      
-      <div class="col-md-5 text-center mt-4 mt-md-0 d-flex align-items-center justify-content-center">
-  <!-- Flip Card Container -->
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      
-      <!-- Front Side (Original Image) -->
-      <div class="flip-card-front">
-        <img loading="lazy" decoding="async" width="400" height="400"
-             src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/abhishek.JPG"
-             class="img-fluid rounded-circle flip-img" alt="Front Image" />
-      </div>
-      
-      <!-- Back Side (New Image) -->
-      <div class="flip-card-back">
-        <img loading="lazy" decoding="async" width="400" height="400"
-             src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Abhishek Hibare emoji.jpg"
-             class="img-fluid rounded-circle flip-img" alt="Back Image" />
-      </div>
+        <div class="col-md-5 text-center mt-4 mt-md-0 d-flex align-items-center justify-content-center">
+          <!-- Flip Card Container -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
 
+              <!-- Front Side (Original Image) -->
+              <div class="flip-card-front">
+                <img loading="lazy" decoding="async" width="400" height="400"
+                  src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/abhishek.JPG"
+                  class="img-fluid rounded-circle flip-img" alt="Front Image" />
+              </div>
+
+              <!-- Back Side (New Image) -->
+              <div class="flip-card-back">
+                <img loading="lazy" decoding="async" width="400" height="400"
+                  src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Abhishek Hibare emoji.jpg"
+                  class="img-fluid rounded-circle flip-img" alt="Back Image" />
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-    </div>
-  </div>
-</section>
+  </section>
 
 
   <section class="social-section">
     <div class="social-icons">
       <a href="https://www.behance.net/abhishekhibare" target="_blank">
-  <i class="fab fa-behance"></i>
-  <span class="social-label">Behance</span>
-</a>
+        <i class="fab fa-behance"></i>
+        <span class="social-label">Behance</span>
+      </a>
       <a href="https://www.artstation.com/abhishekhibare13" target="_blank">
         <i class="fab fa-artstation"></i>
         <span class="social-label">ArtStation</span>
@@ -750,91 +858,100 @@ body {
   </section>
 
 
-<section id="about" class="py-5 bg-light overflow-hidden">
-  <div class="container py-4">
-    <div class="row g-5 align-items-stretch position-relative">
-      
-      <div class="col-lg-6 reveal fade-left d-flex">
-        <div class="creative-profile-card p-4 p-xl-5 w-100 position-relative d-flex flex-column justify-content-between">
-          <div class="card-bg-mesh"></div>
-          
-          <div class="position-relative z-1">
-            <div class="accent-pill mb-3">Who I Am</div>
-            <h2 class="fw-black display-6 text-dark mb-4">About <span class="text-danger-gradient">Me</span></h2>
-            
-            <p class="lead-text text-secondary mb-4">
-              As a passionate and detail-oriented <strong>3D Artist & Motion Graphic Designer</strong>, I specialize in bringing digital worlds to life through the deliberate power of light, shadow, and kinetic energy.
-            </p>
-            
-            <p class="body-text text-muted mb-4">
-              Equipped with a solid foundation to create, optimize, and rig complex 3D characters and structural environmental assets, as well as animate them fluidly across production timelines. I am also proficient at executing precise rotoscoping and live-action tracking integrations.
-            </p>
+  <section id="about" class="py-5 bg-light overflow-hidden">
+    <div class="container py-4">
+      <div class="row g-5 align-items-stretch position-relative">
+
+        <div class="col-lg-6 reveal fade-left d-flex">
+          <div
+            class="creative-profile-card p-4 p-xl-5 w-100 position-relative d-flex flex-column justify-content-between">
+            <div class="card-bg-mesh"></div>
+
+            <div class="position-relative z-1">
+              <div class="accent-pill mb-3">Who I Am</div>
+              <h2 class="fw-black display-6 text-dark mb-4">About <span class="text-danger-gradient">Me</span></h2>
+
+              <p class="lead-text text-secondary mb-4">
+                As a passionate and detail-oriented <strong>3D Artist & Motion Graphic Designer</strong>, I specialize
+                in bringing digital worlds to life through the deliberate power of light, shadow, and kinetic energy.
+              </p>
+
+              <p class="body-text text-muted mb-4">
+                Equipped with a solid foundation to create, optimize, and rig complex 3D characters and structural
+                environmental assets, as well as animate them fluidly across production timelines. I am also proficient
+                at executing precise rotoscoping and live-action tracking integrations.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-lg-6 reveal fade-right d-flex">
-        <div class="creative-timeline-card p-4 p-xl-5 w-100 position-relative">
-          <div class="accent-pill mb-3">Milestones</div>
-          <h2 class="fw-black display-6 text-dark mb-5">Experience</h2>
-          
-          <div class="custom-track-timeline">
-            
-            <div class="track-node-item d-flex mb-5">
-              <div class="node-axis-wrapper me-4 position-relative">
-                <div class="node-bullet node-active d-flex align-items-center justify-content-center">
-                  <i class="bi bi-layers-half text-white"></i>
+        <div class="col-lg-6 reveal fade-right d-flex">
+          <div class="creative-timeline-card p-4 p-xl-5 w-100 position-relative">
+            <div class="accent-pill mb-3">Milestones</div>
+            <h2 class="fw-black display-6 text-dark mb-5">Experience</h2>
+
+            <div class="custom-track-timeline">
+
+              <div class="track-node-item d-flex mb-5">
+                <div class="node-axis-wrapper me-4 position-relative">
+                  <div class="node-bullet node-active d-flex align-items-center justify-content-center">
+                    <i class="bi bi-layers-half text-white"></i>
+                  </div>
+                </div>
+                <div class="node-meta-content shadow-sm p-4 rounded-3 bg-white border border-light w-100">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
+                    <h5 class="fw-bold text-dark mb-0">CGI Associate</h5>
+                    <span class="badge time-stamp-badge">Sept 2025 - Jan 2026</span>
+                  </div>
+                  <h6 class="text-danger fw-semibold small mb-2"><i class="bi bi-building me-1"></i> Flexi Ads, Pune
+                  </h6>
+                  <p class="text-muted small mb-0">Led design and asset generation pathways over a core 6-month
+                    operational deployment.</p>
                 </div>
               </div>
-              <div class="node-meta-content shadow-sm p-4 rounded-3 bg-white border border-light w-100">
-                <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
-                  <h5 class="fw-bold text-dark mb-0">CGI Associate</h5>
-                  <span class="badge time-stamp-badge">Sept 2025 - Jan 2026</span>
+
+              <div class="track-node-item d-flex mb-5">
+                <div class="node-axis-wrapper me-4 position-relative">
+                  <div class="node-bullet d-flex align-items-center justify-content-center">
+                    <i class="bi bi-vector-pen text-secondary"></i>
+                  </div>
                 </div>
-                <h6 class="text-danger fw-semibold small mb-2"><i class="bi bi-building me-1"></i> Flexi Ads, Pune</h6>
-                <p class="text-muted small mb-0">Led design and asset generation pathways over a core 6-month operational deployment.</p>
+                <div class="node-meta-content shadow-sm p-4 rounded-3 bg-white border border-light w-100">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
+                    <h5 class="fw-bold text-dark mb-0">Retouch Artist</h5>
+                    <span class="badge time-stamp-badge">2 Months Internship</span>
+                  </div>
+                  <h6 class="text-secondary fw-semibold small mb-2"><i class="bi bi-building me-1"></i> HMX Media</h6>
+                  <p class="text-muted small mb-0">Executed advanced look-development, mapping passes, and
+                    product-finish texture fidelity workflows.</p>
+                </div>
               </div>
+
+              <div class="track-node-item d-flex">
+                <div class="node-axis-wrapper me-4 position-relative">
+                  <div class="node-bullet d-flex align-items-center justify-content-center">
+                    <i class="bi bi-film text-secondary"></i>
+                  </div>
+                </div>
+                <div class="node-meta-content shadow-sm p-4 rounded-3 bg-white border border-light w-100">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
+                    <h5 class="fw-bold text-dark mb-0">3D &amp; Motion Graphic Artist</h5>
+                    <span class="badge time-stamp-badge">3 Months Internship</span>
+                  </div>
+                  <h6 class="text-secondary fw-semibold small mb-2"><i class="bi bi-building me-1"></i> White Walber
+                    Communication, Pune</h6>
+                  <p class="text-muted small mb-0">Developed composite promotional animations, kinetic typography engine
+                    sets, and spatial layout simulations.</p>
+                </div>
+              </div>
+
             </div>
-
-            <div class="track-node-item d-flex mb-5">
-              <div class="node-axis-wrapper me-4 position-relative">
-                <div class="node-bullet d-flex align-items-center justify-content-center">
-                  <i class="bi bi-vector-pen text-secondary"></i>
-                </div>
-              </div>
-              <div class="node-meta-content shadow-sm p-4 rounded-3 bg-white border border-light w-100">
-                <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
-                  <h5 class="fw-bold text-dark mb-0">Retouch Artist</h5>
-                  <span class="badge time-stamp-badge">2 Months Internship</span>
-                </div>
-                <h6 class="text-secondary fw-semibold small mb-2"><i class="bi bi-building me-1"></i> HMX Media</h6>
-                <p class="text-muted small mb-0">Executed advanced look-development, mapping passes, and product-finish texture fidelity workflows.</p>
-              </div>
-            </div>
-
-            <div class="track-node-item d-flex">
-              <div class="node-axis-wrapper me-4 position-relative">
-                <div class="node-bullet d-flex align-items-center justify-content-center">
-                  <i class="bi bi-film text-secondary"></i>
-                </div>
-              </div>
-              <div class="node-meta-content shadow-sm p-4 rounded-3 bg-white border border-light w-100">
-                <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
-                  <h5 class="fw-bold text-dark mb-0">3D &amp; Motion Graphic Artist</h5>
-                  <span class="badge time-stamp-badge">3 Months Internship</span>
-                </div>
-                <h6 class="text-secondary fw-semibold small mb-2"><i class="bi bi-building me-1"></i> White Walber Communication, Pune</h6>
-                <p class="text-muted small mb-0">Developed composite promotional animations, kinetic typography engine sets, and spatial layout simulations.</p>
-              </div>
-            </div>
-
           </div>
         </div>
+
       </div>
-      
     </div>
-  </div>
-</section>
+  </section>
 
 
 
@@ -843,82 +960,92 @@ body {
       <h1 class="text-light display-4 fw-bold">Softwares</h1>
     </div><br>
     <div class="col-12 col-xl-10 mx-auto">
-  <div class="d-flex flex-wrap justify-content-center gap-3">
-    
-    <div class="skill-flex-item">
-      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #00ff66;">
-        <div class="skill-icon icon-ps d-flex align-items-center justify-content-center mb-2">Ps</div>
-        <h6 class="skill-title  mb-0">Adobe Photoshop</h6>
-        <span class="skill-subtitle">Photo Editing</span>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+
+        <div class="skill-flex-item">
+          <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2"
+            style="--glow-color: #00ff66;">
+            <div class="skill-icon icon-ps d-flex align-items-center justify-content-center mb-2">Ps</div>
+            <h6 class="skill-title  mb-0">Adobe Photoshop</h6>
+            <span class="skill-subtitle">Photo Editing</span>
+          </div>
+        </div>
+
+        <div class="skill-flex-item">
+          <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2"
+            style="--glow-color: #8a2be2;">
+            <div class="skill-icon icon-ai d-flex align-items-center justify-content-center mb-2">Ai</div>
+            <h6 class="skill-title mb-0">Adobe Illustrator</h6>
+            <span class="skill-subtitle">Vector Design</span>
+          </div>
+        </div>
+
+        <div class="skill-flex-item">
+          <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2"
+            style="--glow-color: #d4ff00;">
+            <div class="skill-icon icon-id d-flex align-items-center justify-content-center mb-2">Id</div>
+            <h6 class="skill-title mb-0">Adobe InDesign</h6>
+            <span class="skill-subtitle">Layout Design</span>
+          </div>
+        </div>
+
+        <div class="skill-flex-item">
+          <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2"
+            style="--glow-color: #9933ff;">
+            <div class="skill-icon icon-ae d-flex align-items-center justify-content-center mb-2">Ae</div>
+            <h6 class="skill-title mb-0">After Effects</h6>
+            <span class="skill-subtitle">Motion & VFX</span>
+          </div>
+        </div>
+
+        <div class="skill-flex-item">
+          <div
+            class="skill-card-square d-flex flex-column align-items-column align-items-center justify-content-center text-center p-2"
+            style="--glow-color: #ccff00;">
+            <div class="skill-icon icon-pr d-flex align-items-center justify-content-center mb-2">Pr</div>
+            <h6 class="skill-title mb-0">Premiere Pro</h6>
+            <span class="skill-subtitle">Video Editing</span>
+          </div>
+        </div>
+
+        <div class="skill-flex-item">
+          <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2"
+            style="--glow-color: #e87d0d;">
+            <div class="skill-icon icon-blender d-flex align-items-center justify-content-center mb-2">Bl</div>
+            <h6 class="skill-title mb-0">Blender</h6>
+            <span class="skill-subtitle">3D Modeling</span>
+          </div>
+        </div>
+
+        <div class="skill-flex-item">
+          <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2"
+            style="--glow-color: #00af41;">
+            <div class="skill-icon icon-corel d-flex align-items-center justify-content-center mb-2">Cd</div>
+            <h6 class="skill-title mb-0">CorelDRAW</h6>
+            <span class="skill-subtitle">Vector Graphics</span>
+          </div>
+        </div>
+
+        <div class="skill-flex-item">
+          <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2"
+            style="--glow-color: #0694a2;">
+            <div class="skill-icon icon-maya d-flex align-items-center justify-content-center mb-2">My</div>
+            <h6 class="skill-title mb-0">Autodesk Maya</h6>
+            <span class="skill-subtitle">3D Animation</span>
+          </div>
+        </div>
+
+        <div class="skill-flex-item">
+          <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2"
+            style="--glow-color: #ffffff;">
+            <div class="skill-icon icon-silhouette d-flex align-items-center justify-content-center mb-2">Sl</div>
+            <h6 class="skill-title mb-0">Silhouette</h6>
+            <span class="skill-subtitle">Rotoscope & Paint</span>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <div class="skill-flex-item">
-      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #8a2be2;">
-        <div class="skill-icon icon-ai d-flex align-items-center justify-content-center mb-2">Ai</div>
-        <h6 class="skill-title mb-0">Adobe Illustrator</h6>
-        <span class="skill-subtitle">Vector Design</span>
-      </div>
-    </div>
-
-    <div class="skill-flex-item">
-      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #d4ff00;">
-        <div class="skill-icon icon-id d-flex align-items-center justify-content-center mb-2">Id</div>
-        <h6 class="skill-title mb-0">Adobe InDesign</h6>
-        <span class="skill-subtitle">Layout Design</span>
-      </div>
-    </div>
-
-    <div class="skill-flex-item">
-      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #9933ff;">
-        <div class="skill-icon icon-ae d-flex align-items-center justify-content-center mb-2">Ae</div>
-        <h6 class="skill-title mb-0">After Effects</h6>
-        <span class="skill-subtitle">Motion & VFX</span>
-      </div>
-    </div>
-
-    <div class="skill-flex-item">
-      <div class="skill-card-square d-flex flex-column align-items-column align-items-center justify-content-center text-center p-2" style="--glow-color: #ccff00;">
-        <div class="skill-icon icon-pr d-flex align-items-center justify-content-center mb-2">Pr</div>
-        <h6 class="skill-title mb-0">Premiere Pro</h6>
-        <span class="skill-subtitle">Video Editing</span>
-      </div>
-    </div>
-
-    <div class="skill-flex-item">
-      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #e87d0d;">
-        <div class="skill-icon icon-blender d-flex align-items-center justify-content-center mb-2">Bl</div>
-        <h6 class="skill-title mb-0">Blender</h6>
-        <span class="skill-subtitle">3D Modeling</span>
-      </div>
-    </div>
-
-    <div class="skill-flex-item">
-      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #00af41;">
-        <div class="skill-icon icon-corel d-flex align-items-center justify-content-center mb-2">Cd</div>
-        <h6 class="skill-title mb-0">CorelDRAW</h6>
-        <span class="skill-subtitle">Vector Graphics</span>
-      </div>
-    </div>
-
-    <div class="skill-flex-item">
-      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #0694a2;">
-        <div class="skill-icon icon-maya d-flex align-items-center justify-content-center mb-2">My</div>
-        <h6 class="skill-title mb-0">Autodesk Maya</h6>
-        <span class="skill-subtitle">3D Animation</span>
-      </div>
-    </div>
-
-    <div class="skill-flex-item">
-      <div class="skill-card-square d-flex flex-column align-items-center justify-content-center text-center p-2" style="--glow-color: #ffffff;">
-        <div class="skill-icon icon-silhouette d-flex align-items-center justify-content-center mb-2">Sl</div>
-        <h6 class="skill-title mb-0">Silhouette</h6>
-        <span class="skill-subtitle">Rotoscope & Paint</span>
-      </div>
-    </div>
-
-  </div>
-</div>
   </section>
 
 
@@ -931,580 +1058,779 @@ body {
     <div class="container ">
       <!-- Filter buttons -->
       <div class="col-12 col-md-10 col-lg-9 mb-4 mx-auto">
-  <div class="btn-group flex-wrap justify-content-center w-100" role="group" aria-label="portfolio filters">
-    <button class="btn btn-outline-danger active mr-2 mt-2" data-filter="all">All</button>
-    <button class="btn btn-outline-danger mr-2 mt-2" data-filter="projects">3D Projects</button>
-    <button class="btn btn-outline-danger mr-2 mt-2" data-filter="logos">Logos</button>
-    <button class="btn btn-outline-danger mr-2 mt-2" data-filter="ads">Advertisements</button>
-    <button class="btn btn-outline-danger mr-2 mt-2" data-filter="photoshop">Photoshop</button>
-    <button class="btn btn-outline-danger mr-2 mt-2" data-filter="motion">Motion Graphics</button>
-  </div>
-</div>
+        <div class="btn-group flex-wrap justify-content-center w-100" role="group" aria-label="portfolio filters">
+          <button class="btn btn-outline-danger active mr-2 mt-2" data-filter="all">All</button>
+          <button class="btn btn-outline-danger mr-2 mt-2" data-filter="projects">3D Projects</button>
+          <button class="btn btn-outline-danger mr-2 mt-2" data-filter="logos">Logos</button>
+          <button class="btn btn-outline-danger mr-2 mt-2" data-filter="ads">Advertisements</button>
+          <button class="btn btn-outline-danger mr-2 mt-2" data-filter="photoshop">Photoshop</button>
+          <button class="btn btn-outline-danger mr-2 mt-2" data-filter="motion">Motion Graphics</button>
+        </div>
+      </div>
 
 
       <!-- Grid -->
       <div class="row g-4" id="portfolio-grid">
         <!-- Example unified item template -->
         <!-- Project Card 1 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_3dblender-cgi-blendercgi-ugcPost-7465745034257121280-XBNd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlW8-sBIIZEUB1V7OehMsSC2oouFsvAgvg" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/uxury watch rolling.jpg" class="card-img-top rounded" alt="Wrist watch Simulation">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Luxuary Watch</h5>
-      <p class="card-text small text-muted">3D simulation</p>
-    </div>
-  </div>
-</div>
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_3dblender-cgi-blendercgi-ugcPost-7465745034257121280-XBNd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlW8-sBIIZEUB1V7OehMsSC2oouFsvAgvg"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/uxury watch rolling.jpg"
+                class="card-img-top rounded" alt="Wrist watch Simulation">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Luxuary Watch</h5>
+              <p class="card-text small text-muted">3D simulation</p>
+            </div>
+          </div>
+        </div>
 
- <!-- Project Card 2 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_3dblender-cgi-blendercgi-ugcPost-7466426706111918080-rcDJ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlW8-sBIIZEUB1V7OehMsSC2oouFsvAgvg" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/masterpiece hangs.jpg" class="card-img-top rounded" alt="Wrist watch Simulation">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">MasterPiece Gallery</h5>
-      <p class="card-text small text-muted">3D simulation</p>
-    </div>
-  </div>
-</div>
+        <!-- Project Card 2 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_3dblender-cgi-blendercgi-ugcPost-7466426706111918080-rcDJ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlW8-sBIIZEUB1V7OehMsSC2oouFsvAgvg"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/masterpiece hangs.jpg"
+                class="card-img-top rounded" alt="Wrist watch Simulation">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">MasterPiece Gallery</h5>
+              <p class="card-text small text-muted">3D simulation</p>
+            </div>
+          </div>
+        </div>
 
- <!-- Project Card 3 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_cgi-3dblender-cgi-activity-7439619076458655744-eVzc" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Wrist watch.png" class="card-img-top rounded" alt="Wrist watch Simulation">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Wrist Watch</h5>
-      <p class="card-text small text-muted">3D simulation</p>
-    </div>
-  </div>
-</div>
+        <!-- Project Card 3 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_cgi-3dblender-cgi-activity-7439619076458655744-eVzc"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Wrist watch.png"
+                class="card-img-top rounded" alt="Wrist watch Simulation">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Wrist Watch</h5>
+              <p class="card-text small text-muted">3D simulation</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Project Card 4 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_3dblender-cgi-blendercgi-activity-7444296165120163840-aiGL" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Luxuary Perfume.png" class="card-img-top rounded" alt="Luxuary perfume Simulation">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Luxuary perfume</h5>
-      <p class="card-text small text-muted">3D simulation</p>
-    </div>
-  </div>
-</div>
+        <!-- Project Card 4 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_3dblender-cgi-blendercgi-activity-7444296165120163840-aiGL"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Luxuary Perfume.png"
+                class="card-img-top rounded" alt="Luxuary perfume Simulation">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Luxuary perfume</h5>
+              <p class="card-text small text-muted">3D simulation</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Project Card 5 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_3dblender-cgi-blendercgi-activity-7448346546758434816-6utY" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fanta scene.png" class="card-img-top rounded" alt="Fanta scene Simulation">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Fanta scene</h5>
-      <p class="card-text small text-muted">3D simulation</p>
-    </div>
-  </div>
-</div>
+        <!-- Project Card 5 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_3dblender-cgi-blendercgi-activity-7448346546758434816-6utY"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fanta scene.png"
+                class="card-img-top rounded" alt="Fanta scene Simulation">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Fanta scene</h5>
+              <p class="card-text small text-muted">3D simulation</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Project Card 6 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_cgimagic-jbl660-3dblender-activity-7393176781400395776-Wnw5" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/JBL.jpg" class="card-img-top rounded" alt="JBL Tune660">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">JBL Tune660 Headphone</h5>
-      <p class="card-text small text-muted">3D simulation</p>
-    </div>
-  </div>
-</div>
+        <!-- Project Card 6 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_cgimagic-jbl660-3dblender-activity-7393176781400395776-Wnw5"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/JBL.jpg"
+                class="card-img-top rounded" alt="JBL Tune660">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">JBL Tune660 Headphone</h5>
+              <p class="card-text small text-muted">3D simulation</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Project Card 7 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-3dblender-fluid-activity-7377197737169055744-l2Rf" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Donut & Honey-3d simulation shared on linkedIn.png" class="card-img-top rounded" alt="Blender Donut & Honey">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Blender Donut & Honey</h5>
-      <p class="card-text small text-muted">3D simulation</p>
-    </div>
-  </div>
-</div>
+        <!-- Project Card 7 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-3dblender-fluid-activity-7377197737169055744-l2Rf"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Donut & Honey-3d simulation shared on linkedIn.png"
+                class="card-img-top rounded" alt="Blender Donut & Honey">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Blender Donut & Honey</h5>
+              <p class="card-text small text-muted">3D simulation</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Project Card 8 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-3dblender-fluid-activity-7374343975039746049-utO6" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender sharbat-3d simulation shared on linkedIn.png" class="card-img-top rounded" alt="Blender sharbat">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Blender sharbat</h5>
-      <p class="card-text small text-muted">3D simulation</p>
-    </div>
-  </div>
-</div>
+        <!-- Project Card 8 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-3dblender-fluid-activity-7374343975039746049-utO6"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender sharbat-3d simulation shared on linkedIn.png"
+                class="card-img-top rounded" alt="Blender sharbat">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Blender sharbat</h5>
+              <p class="card-text small text-muted">3D simulation</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Project Card 9 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-3dblender-fluid-activity-7369257585738227713-IPv-" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Oreo cream-3d simulation shared on linkedIn.png" class="card-img-top rounded" alt="Blender Oreo cream">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Blender Oreo cream</h5>
-      <p class="card-text small text-muted">3D simulation</p>
-    </div>
-  </div>
-</div>
+        <!-- Project Card 9 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-3dblender-fluid-activity-7369257585738227713-IPv-"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Oreo cream-3d simulation shared on linkedIn.png"
+                class="card-img-top rounded" alt="Blender Oreo cream">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Blender Oreo cream</h5>
+              <p class="card-text small text-muted">3D simulation</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Project Card 10 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-aftereffect-3dblender-activity-7332367370293817344-_hJa" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Burger-3d CGI Video shared on linkedIn.png" class="card-img-top rounded" alt="Blender Burger">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Blender Burger</h5>
-      <p class="card-text small text-muted">3D CGI Video</p>
-    </div>
-  </div>
-</div>
+        <!-- Project Card 10 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-aftereffect-3dblender-activity-7332367370293817344-_hJa"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender Burger-3d CGI Video shared on linkedIn.png"
+                class="card-img-top rounded" alt="Blender Burger">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Blender Burger</h5>
+              <p class="card-text small text-muted">3D CGI Video</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Project Card 11 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-aftereffect-3dblender-activity-7329371832933920768-Mtbn" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender CocaCola-3d CGI Video shared on linkedIn.png" class="card-img-top rounded" alt="Blender Coca Cola">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Blender Coca Cola</h5>
-      <p class="card-text small text-muted">3D CGI Video</p>
-    </div>
-  </div>
-</div>
+        <!-- Project Card 11 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-aftereffect-3dblender-activity-7329371832933920768-Mtbn"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender CocaCola-3d CGI Video shared on linkedIn.png"
+                class="card-img-top rounded" alt="Blender Coca Cola">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Blender Coca Cola</h5>
+              <p class="card-text small text-muted">3D CGI Video</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Project Card 12 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-car-carrig-activity-7296060599917068290-BTI3" class="portfolio-link" target="_blank">
-      <img loading="lazy" decoding="async" src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender JeepCompass-3d car Rig shared on linkedIn.png" class="card-img-top rounded" alt="Blender JeepCompass">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Blender JeepCompass</h5>
-      <p class="card-text small text-muted">3D car Rig</p>
-    </div>
-  </div>
-</div>
+        <!-- Project Card 12 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="projects">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.linkedin.com/posts/abhishek-hibare-a6320822a_blender-car-carrig-activity-7296060599917068290-BTI3"
+              class="portfolio-link" target="_blank">
+              <img loading="lazy" decoding="async"
+                src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Blender JeepCompass-3d car Rig shared on linkedIn.png"
+                class="card-img-top rounded" alt="Blender JeepCompass">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Blender JeepCompass</h5>
+              <p class="card-text small text-muted">3D car Rig</p>
+            </div>
+          </div>
+        </div>
 
         <!-- Logos (converted from previous logo section) -->
         <!-- Fox Logo -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fox%20Logo.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fox%20Logo.jpg&w=800&q=70" class="card-img-top rounded" alt="Fox Logo">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Fox Logo</h5>
-      <p class="card-text small text-muted">Brand identity — Illustrator</p>
-    </div>
-  </div>
-</div>
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fox%20Logo.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fox%20Logo.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Fox Logo">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Fox Logo</h5>
+              <p class="card-text small text-muted">Brand identity — Illustrator</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Moch Logo -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo.jpg&w=800&q=70" class="card-img-top rounded" alt="Moch Logo">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Moch Logo</h5>
-      <p class="card-text small text-muted">Brand identity — Illustrator</p>
-    </div>
-  </div>
-</div>
+        <!-- Moch Logo -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo.jpg" class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Moch Logo">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Moch Logo</h5>
+              <p class="card-text small text-muted">Brand identity — Illustrator</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Company Logo 1 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%201.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%201.jpg&w=800&q=70" class="card-img-top rounded" alt="Company Logo">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Company Logo</h5>
-      <p class="card-text small text-muted">Brand identity — Illustrator</p>
-    </div>
-  </div>
-</div>
+        <!-- Company Logo 1 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%201.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%201.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Company Logo">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Company Logo</h5>
+              <p class="card-text small text-muted">Brand identity — Illustrator</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Golden Swan Logo -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%202.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%202.jpg&w=800&q=70" class="card-img-top rounded" alt="Golden Swan Logo">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Golden Swan Logo</h5>
-      <p class="card-text small text-muted">Brand identity — Illustrator</p>
-    </div>
-  </div>
-</div>
+        <!-- Golden Swan Logo -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%202.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%202.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Golden Swan Logo">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Golden Swan Logo</h5>
+              <p class="card-text small text-muted">Brand identity — Illustrator</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Company Logo 2 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%203.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%203.jpg&w=800&q=70" class="card-img-top rounded" alt="Company Logo">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Company Logo</h5>
-      <p class="card-text small text-muted">Brand identity — Illustrator</p>
-    </div>
-  </div>
-</div>
+        <!-- Company Logo 2 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%203.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%203.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Company Logo">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Company Logo</h5>
+              <p class="card-text small text-muted">Brand identity — Illustrator</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Company Logo 3 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%205.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%205.jpg&w=800&q=70" class="card-img-top rounded" alt="Company Logo">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Company Logo</h5>
-      <p class="card-text small text-muted">Brand identity — Illustrator</p>
-    </div>
-  </div>
-</div>
+        <!-- Company Logo 3 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%205.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Logo%205.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Company Logo">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Company Logo</h5>
+              <p class="card-text small text-muted">Brand identity — Illustrator</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Moch II Logo -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Second%20Logo.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Second%20Logo.jpg&w=800&q=70" class="card-img-top rounded" alt="Moch II logo">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Moch II logo</h5>
-      <p class="card-text small text-muted">Brand identity — Illustrator</p>
-    </div>
-  </div>
-</div>
+        <!-- Moch II Logo -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Second%20Logo.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Second%20Logo.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Moch II logo">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Moch II logo</h5>
+              <p class="card-text small text-muted">Brand identity — Illustrator</p>
+            </div>
+          </div>
+        </div>
 
-<!-- AirFit Logo -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/AirFit%20Logo.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/AirFit%20Logo.jpg&w=800&q=70" class="card-img-top rounded" alt="AirFit Logo">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">AirFit Logo</h5>
-      <p class="card-text small text-muted">Brand identity — Illustrator</p>
-    </div>
-  </div>
-</div>
+        <!-- AirFit Logo -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/AirFit%20Logo.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/AirFit%20Logo.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="AirFit Logo">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">AirFit Logo</h5>
+              <p class="card-text small text-muted">Brand identity — Illustrator</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Fly Wing Logo -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fly%20Wing%20Logo.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fly%20Wing%20Logo.jpg&w=800&q=70" class="card-img-top rounded" alt="Fly Wing Logo">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Fly Wing Logo</h5>
-      <p class="card-text small text-muted">Brand identity — Illustrator</p>
-    </div>
-  </div>
-</div>
+        <!-- Fly Wing Logo -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="logos">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fly%20Wing%20Logo.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Fly%20Wing%20Logo.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Fly Wing Logo">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Fly Wing Logo</h5>
+              <p class="card-text small text-muted">Brand identity — Illustrator</p>
+            </div>
+          </div>
+        </div>
 
         <!-- Ads -->
         <!-- Social Media Mockup -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Social%20Media%20Mockup.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Social%20Media%20Mockup.jpg&w=800&q=70" class="card-img-top rounded" alt="Social Media Mockup">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Social Media Mockup</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Social%20Media%20Mockup.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Social%20Media%20Mockup.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Social Media Mockup">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Social Media Mockup</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Digital Marketing Ads -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Marketing%20Ads.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Marketing%20Ads.jpg&w=800&q=70" class="card-img-top rounded" alt="Digital Marketing Ads">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Digital Marketing Ads</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <!-- Digital Marketing Ads -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Marketing%20Ads.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Marketing%20Ads.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Digital Marketing Ads">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Digital Marketing Ads</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Sale -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Sale.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Sale.jpg&w=800&q=70" class="card-img-top rounded" alt="Sale">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Sale</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <!-- Sale -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Sale.jpg" class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Sale.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Sale">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Sale</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Shoes Ads -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Shoes%20Ads.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Shoes%20Ads.jpg&w=800&q=70" class="card-img-top rounded" alt="Shoes Ads">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Shoes Ads</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <!-- Shoes Ads -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Shoes%20Ads.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Shoes%20Ads.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Shoes Ads">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Shoes Ads</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Social Ads -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Social%20Ads.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Social%20Ads.jpg&w=800&q=70" class="card-img-top rounded" alt="Social Ads">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Social Ads</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <!-- Social Ads -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Social%20Ads.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Social%20Ads.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Social Ads">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Social Ads</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Pizza Ad -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Pizza%20Ad.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Pizza%20Ad.jpg&w=800&q=70" class="card-img-top rounded" alt="Pizza Ad">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Pizza Ad</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <!-- Pizza Ad -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Pizza%20Ad.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Pizza%20Ad.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Pizza Ad">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Pizza Ad</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Vegan Ads -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Vegan%20Ads.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Vegan%20Ads.jpg&w=800&q=70" class="card-img-top rounded" alt="Vegan Ads">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Vegan Ads</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <!-- Vegan Ads -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Vegan%20Ads.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Vegan%20Ads.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Vegan Ads">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Vegan Ads</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Amul Ad -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Amul%20Ads.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Amul%20Ads.jpg&w=800&q=70" class="card-img-top rounded" alt="Amul Ad">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Amul Ad</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <!-- Amul Ad -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Amul%20Ads.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Amul%20Ads.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Amul Ad">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Amul Ad</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Biryani Ads -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Biryani%20ads.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Biryani%20ads.jpg&w=800&q=70" class="card-img-top rounded" alt="Biryani Ads">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Biryani Ads</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <!-- Biryani Ads -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Biryani%20ads.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Biryani%20ads.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Biryani Ads">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Biryani Ads</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Biryani Poster -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Briyani%20poster.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Briyani%20poster.jpg&w=800&q=70" class="card-img-top rounded" alt="Biryani Poster">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Biryani Poster</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <!-- Biryani Poster -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Briyani%20poster.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Briyani%20poster.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Biryani Poster">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Biryani Poster</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Burger Ads for Social Media -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Burger%20Ads%20Design%20For%20Social%20Media.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Burger%20Ads%20Design%20For%20Social%20Media.jpg&w=800&q=70" class="card-img-top rounded" alt="Burger Ads for Social Media">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Burger Ads for Social Media</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <!-- Burger Ads for Social Media -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Burger%20Ads%20Design%20For%20Social%20Media.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Burger%20Ads%20Design%20For%20Social%20Media.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Burger Ads for Social Media">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Burger Ads for Social Media</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Burger Ads -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Burger%20Ads.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Burger%20Ads.jpg&w=800&q=70" class="card-img-top rounded" alt="Burger Ads">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Burger Ads</h5>
-      <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
-    </div>
-  </div>
-</div>
+        <!-- Burger Ads -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="ads">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Burger%20Ads.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Burger%20Ads.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Burger Ads">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Burger Ads</h5>
+              <p class="card-text small text-muted">Ad design — CorelDraw & Indesign</p>
+            </div>
+          </div>
+        </div>
 
         <!-- Photoshop -->
         <!-- Clone Stamp 1 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone%20stamp-%20Work%20done%20In%20Photoshop.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone%20stamp-%20Work%20done%20In%20Photoshop.jpg&w=800&q=70" class="card-img-top rounded" alt="Clone stamp">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Clone Stamp Retouch</h5>
-      <p class="card-text small text-muted">Photoshop retouching</p>
-    </div>
-  </div>
-</div>
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone%20stamp-%20Work%20done%20In%20Photoshop.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone%20stamp-%20Work%20done%20In%20Photoshop.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Clone stamp">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Clone Stamp Retouch</h5>
+              <p class="card-text small text-muted">Photoshop retouching</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Clone Stamp 2 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone%20stamp-Work%20done%20In%20Photoshop.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone%20stamp-Work%20done%20In%20Photoshop.jpg&w=800&q=70" class="card-img-top rounded" alt="Clone stamp">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Clone Stamp Retouch</h5>
-      <p class="card-text small text-muted">Photoshop retouching</p>
-    </div>
-  </div>
-</div>
+        <!-- Clone Stamp 2 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone%20stamp-Work%20done%20In%20Photoshop.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Clone%20stamp-Work%20done%20In%20Photoshop.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Clone stamp">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Clone Stamp Retouch</h5>
+              <p class="card-text small text-muted">Photoshop retouching</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Digital Painting 1 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image%20Manipulate%20-Work%20done%20In%20Photoshop%20(2).jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image%20Manipulate%20-Work%20done%20In%20Photoshop%20(2).jpg&w=800&q=70" class="card-img-top rounded" alt="Digital Painting">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Digital Painting</h5>
-      <p class="card-text small text-muted">Photoshop painting</p>
-    </div>
-  </div>
-</div>
+        <!-- Digital Painting 1 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image%20Manipulate%20-Work%20done%20In%20Photoshop%20(2).jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image%20Manipulate%20-Work%20done%20In%20Photoshop%20(2).jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Digital Painting">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Digital Painting</h5>
+              <p class="card-text small text-muted">Photoshop painting</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Digital Painting 2 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Painting-%20Work%20done%20In%20Photoshop%20(2).jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Painting-%20Work%20done%20In%20Photoshop%20(2).jpg&w=800&q=70" class="card-img-top rounded" alt="Digital Painting">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Digital Painting</h5>
-      <p class="card-text small text-muted">Photoshop painting</p>
-    </div>
-  </div>
-</div>
+        <!-- Digital Painting 2 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Painting-%20Work%20done%20In%20Photoshop%20(2).jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Painting-%20Work%20done%20In%20Photoshop%20(2).jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Digital Painting">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Digital Painting</h5>
+              <p class="card-text small text-muted">Photoshop painting</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Image Manipulate 1 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Painting-%20Work%20done%20In%20Photoshop.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Painting-%20Work%20done%20In%20Photoshop.jpg&w=800&q=70" class="card-img-top rounded" alt="Image Manipulate">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Image Manipulation</h5>
-      <p class="card-text small text-muted">Photoshop editing</p>
-    </div>
-  </div>
-</div>
+        <!-- Image Manipulate 1 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Painting-%20Work%20done%20In%20Photoshop.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Digital%20Painting-%20Work%20done%20In%20Photoshop.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Image Manipulate">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Image Manipulation</h5>
+              <p class="card-text small text-muted">Photoshop editing</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Image Manipulate 2 -->
-<div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image%20Manipulate%20-Work%20done%20In%20Photoshop.jpg" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image%20Manipulate%20-Work%20done%20In%20Photoshop.jpg&w=800&q=70" class="card-img-top rounded" alt="Image Manipulate">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Image Manipulation</h5>
-      <p class="card-text small text-muted">Photoshop editing</p>
-    </div>
-  </div>
-</div>
+        <!-- Image Manipulate 2 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="photoshop">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image%20Manipulate%20-Work%20done%20In%20Photoshop.jpg"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Image%20Manipulate%20-Work%20done%20In%20Photoshop.jpg&w=800&q=70"
+                class="card-img-top rounded" alt="Image Manipulate">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Image Manipulation</h5>
+              <p class="card-text small text-muted">Photoshop editing</p>
+            </div>
+          </div>
+        </div>
 
         <!-- You can duplicate/add more .portfolio-item blocks here following the pattern above -->
-         <!-- Motion Graphics-->
-         <!-- Motion Graphics 1-->
-          <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.behance.net/gallery/248465245/Soda-Juice-Ads" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Soda Juice Ads.png" class="card-img-top rounded" alt="Image Manipulate">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Soda Juice Ads</h5>
-      <p class="card-text small text-muted">Motion Graphics</p>
-    </div>
-  </div>
-</div>
-<!-- Motion Graphics 2 -->
-          <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.behance.net/gallery/246181673/Sprite-Ads" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Sprite sode.png" class="card-img-top rounded" alt="Image Manipulate">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Sprite Soda Ads</h5>
-      <p class="card-text small text-muted">Motion Graphics</p>
-    </div>
-  </div>
-</div>
-<!-- Motion Graphics 3 -->
-          <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.behance.net/gallery/247402191/Coconut-water-Ads" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Coconut water.png" class="card-img-top rounded" alt="Image Manipulate">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Coconut water Ads</h5>
-      <p class="card-text small text-muted">Motion Graphics</p>
-    </div>
-  </div>
-</div>
-<!-- Motion Graphics 4-->
-          <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
-  <div class="card border-0 shadow-sm h-100">
-    <a href="https://www.behance.net/gallery/247076159/Motion-Graphic-Product-Animation" class="portfolio-link">
-      <img loading="lazy" decoding="async" src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/berry jar.png" class="card-img-top rounded" alt="Image Manipulate">
-    </a>
-    <div class="card-body text-dark text-center">
-      <h5 class="card-title mb-1">Berry Jar Ads</h5>
-      <p class="card-text small text-muted">Motion Graphics</p>
-    </div>
-  </div>
-</div>
+        <!-- Motion Graphics-->
+        <!-- Motion Graphics 1-->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.behance.net/gallery/248465245/Soda-Juice-Ads" class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Soda Juice Ads.png"
+                class="card-img-top rounded" alt="Image Manipulate">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Soda Juice Ads</h5>
+              <p class="card-text small text-muted">Motion Graphics</p>
+            </div>
+          </div>
+        </div>
+        <!-- Motion Graphics 2 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.behance.net/gallery/246181673/Sprite-Ads" class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Sprite sode.png"
+                class="card-img-top rounded" alt="Image Manipulate">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Sprite Soda Ads</h5>
+              <p class="card-text small text-muted">Motion Graphics</p>
+            </div>
+          </div>
+        </div>
+        <!-- Motion Graphics 3 -->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.behance.net/gallery/247402191/Coconut-water-Ads" class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Coconut water.png"
+                class="card-img-top rounded" alt="Image Manipulate">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Coconut water Ads</h5>
+              <p class="card-text small text-muted">Motion Graphics</p>
+            </div>
+          </div>
+        </div>
+        <!-- Motion Graphics 4-->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.behance.net/gallery/247076159/Motion-Graphic-Product-Animation" class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/berry jar.png"
+                class="card-img-top rounded" alt="Image Manipulate">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Berry Jar Ads</h5>
+              <p class="card-text small text-muted">Motion Graphics</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motion Graphics 5-->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.behance.net/gallery/251714345/Product-Motion-Ads?platform=direct"
+              class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Product Motion Ads.jpeg"
+                class="card-img-top rounded" alt="Image Manipulate">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Product Motion Ads</h5>
+              <p class="card-text small text-muted">Motion Graphics</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motion Graphics 6-->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.behance.net/gallery/251592701/Text-Animation" class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Text Animation.jpeg"
+                class="card-img-top rounded" alt="Image Manipulate">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Text Animation</h5>
+              <p class="card-text small text-muted">Motion Graphics</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motion Graphics 7-->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.behance.net/gallery/251591943/Croma-Green-Screen" class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Croma & Green Screen.jpeg"
+                class="card-img-top rounded" alt="Image Manipulate">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Croma & Green Screen</h5>
+              <p class="card-text small text-muted">Motion Graphics</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motion Graphics 8-->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.behance.net/gallery/251591619/Motion-Tracking-Work" class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Motion Tracking Work.jpeg"
+                class="card-img-top rounded" alt="Image Manipulate">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Motion Tracking Work</h5>
+              <p class="card-text small text-muted">Motion Graphics</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motion Graphics 9-->
+        <div class="col-sm-6 col-md-4 col-lg-3 portfolio-item" data-category="motion">
+          <div class="card border-0 shadow-sm h-100">
+            <a href="https://www.behance.net/gallery/251492381/Motion-Poster" class="portfolio-link">
+              <img loading="lazy" decoding="async"
+                src="https://images.weserv.nl/?url=github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Motion Poster.jpeg"
+                class="card-img-top rounded" alt="Image Manipulate">
+            </a>
+            <div class="card-body text-dark text-center">
+              <h5 class="card-title mb-1">Motion Poster</h5>
+              <p class="card-text small text-muted">Motion Graphics</p>
+            </div>
+          </div>
+        </div>
 
 
       </div>
@@ -1515,7 +1841,8 @@ body {
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content bg-transparent border-0">
           <div class="modal-body p-0">
-            <button type="button" class="btn-close btn-close-white position-absolute end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white position-absolute end-0 m-3" data-bs-dismiss="modal"
+              aria-label="Close"></button>
             <img id="portfolioModalImg" src="" alt="" class="img-fluid rounded" style="width:100%" />
             <div id="portfolioModalCaption" class="text-white mt-2"></div>
           </div>
@@ -1532,10 +1859,12 @@ body {
         transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
         min-width: 130px;
       }
+
       #portfolio .btn-group .btn:hover {
         transform: translateY(-1px);
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
       }
+
       #portfolio .btn-group .btn.active,
       #portfolio .btn-group .btn.active:hover {
         background: #dc3545;
@@ -1543,22 +1872,27 @@ body {
         border-color: #dc3545;
         box-shadow: 0 16px 35px rgba(220, 53, 69, 0.25);
       }
+
       #portfolio .btn-group .btn:not(.active) {
         color: #6c757d;
         background: rgba(220, 53, 69, 0.05);
         border-color: rgba(220, 53, 69, 0.4);
       }
+
       #portfolio .btn-group .btn:focus {
         box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.22);
       }
+
       .portfolio-link img {
         height: 230px;
         object-fit: cover;
         display: block;
       }
+
       .portfolio-item {
         will-change: transform, opacity;
       }
+
       .portfolio-item[hidden] {
         display: none !important;
       }
@@ -1616,7 +1950,11 @@ body {
 
   <!-- Legacy sections hidden (integrated into Portfolio) -->
   <style>
-    #logo, #advertisements, #photoshop { display: none !important; }
+    #logo,
+    #advertisements,
+    #photoshop {
+      display: none !important;
+    }
   </style>
 
   <section class="text-dark py-5" id="certification">
@@ -1635,7 +1973,7 @@ body {
               <img
                 src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _1.jpg"
                 class="card-img-top img-fluid" alt="Specialisation In 3D Asset">
-              
+
             </div>
             <div class="bg-light card-body text-center">
               <h6 class="fw-bold mt-2">Specialisation In 3D Asset</h6>
@@ -1650,7 +1988,6 @@ body {
               <img
                 src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _2.jpg"
                 class="card-img-top img-fluid" alt="3D Edge Plus with Animation Specialisation">
-              
             </div>
             <div class="bg-light card-body text-center">
               <h6 class="fw-bold mt-2">3D Edge Plus with Animation Specialisation</h6>
@@ -1665,7 +2002,7 @@ body {
               <img
                 src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _3.jpg"
                 class="card-img-top img-fluid" alt="MCL Certificate In Digital Painting">
-              
+
             </div>
             <div class="bg-light card-body text-center">
               <h6 class="fw-bold mt-2">MCL Certificate In Digital Painting</h6>
@@ -1680,7 +2017,7 @@ body {
               <img
                 src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _4.jpg"
                 class="card-img-top img-fluid" alt="24FPS Best CG Lighting">
-              
+
             </div>
             <div class="bg-light card-body text-center">
               <h6 class="fw-bold mt-2">24FPS Best CG Lighting</h6>
@@ -1695,7 +2032,7 @@ body {
               <img
                 src="https://github.com/abhishekhibare1305/abhishekhibare1305/raw/main/Certificate Of Abhishek Hibare _5.jpg"
                 class="card-img-top img-fluid" alt="24FPS Best Digital Painting">
-              
+
             </div>
             <div class="bg-light card-body text-center">
               <h6 class="fw-bold mt-2">24FPS Best Digital Painting</h6>
@@ -1750,97 +2087,98 @@ body {
     }
   </style>
 
-
-
   <!-- Footer Section -->
-<footer class="creative-production-footer text-light pt-5 pb-4 position-relative overflow-hidden">
-  <!-- 3D Perspective Grid Visual Overlay -->
-  <div class="footer-viewport-grid"></div>
-  <!-- Abstract Glow Aura -->
-  <div class="footer-glow-aura"></div>
+  <footer class="creative-production-footer text-light pt-5 pb-4 position-relative overflow-hidden">
+    <!-- 3D Perspective Grid Visual Overlay -->
+    <div class="footer-viewport-grid"></div>
+    <!-- Abstract Glow Aura -->
+    <div class="footer-glow-aura"></div>
 
-  <div class="container position-relative z-2">
-    <div class="row gy-4 justify-content-between">
+    <div class="container position-relative z-2">
+      <div class="row gy-4 justify-content-between">
 
-      <!-- Brand / Creator Profile Block -->
-      <div class="col-md-4">
-        <div class="d-flex align-items-center mb-3">
-          <div class="production-dot me-2"></div>
-          <h5 class="fw-black text-uppercase tracking-wider mb-0">Abhishek Hibare</h5>
+        <!-- Brand / Creator Profile Block -->
+        <div class="col-md-4">
+          <div class="d-flex align-items-center mb-3">
+            <div class="production-dot me-2"></div>
+            <h5 class="fw-black text-uppercase tracking-wider mb-0">Abhishek Hibare</h5>
+          </div>
+          <p class="text-muted small lh-lg">
+            3D Artist &amp; Motion Graphics Designer passionate about manipulating digital environments, directional
+            lighting, and kinetic motion pathways to construct compelling spatial experiences.
+          </p>
+
         </div>
-        <p class="text-muted small lh-lg">
-          3D Artist &amp; Motion Graphics Designer passionate about manipulating digital environments, directional lighting, and kinetic motion pathways to construct compelling spatial experiences.
-        </p>
 
+        <!-- Live Contact Terminal Block -->
+        <div class="col-md-3">
+          <h5 class="fw-bold text-uppercase tracking-wider text-secondary-light mb-3">Contact Channel</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-3 d-flex align-items-center">
+              <span class="contact-icon-wrapper d-flex align-items-center justify-content-center me-2">
+                <i class="fas fa-envelope text-danger"></i>
+              </span>
+              <a href="mailto:abhishekhibare1305@gmail.com"
+                class="text-muted text-decoration-none hover-link">abhishekhibare1305@gmail.com</a>
+            </li>
+            <li class="d-flex align-items-center">
+              <span class="contact-icon-wrapper d-flex align-items-center justify-content-center me-2">
+                <i class="fas fa-map-marker-alt text-danger"></i>
+              </span>
+              <span class="text-muted">Solapur, Maharashtra, India</span>
+            </li>
+          </ul>
+
+          <!-- Interactive Availability Status Indicator -->
+          <div
+            class="d-inline-flex align-items-center mt-3 bg-dark-card px-3 py-1 rounded-pill border border-dark-edge">
+            <span class="status-pulse-dot me-2"></span>
+            <span class="font-monospace text-muted" style="font-size: 0.72rem; uppercase">Status: Available for
+              Briefs</span>
+          </div>
+        </div>
+
+        <!-- Social / Creative Portal Links -->
+        <div class="col-md-4 text-md-end">
+          <h5 class="fw-bold text-uppercase tracking-wider text-secondary-light mb-3">Creative Portals</h5>
+          <div class="d-flex gap-2 justify-content-start justify-content-md-end flex-wrap">
+            <a href="https://www.behance.net/abhishekhibare" target="_blank" class="social-portal-btn" title="Behance">
+              <i class="fab fa-behance"></i>
+            </a>
+            <a href="https://www.artstation.com/abhishekhibare13" target="_blank" class="social-portal-btn"
+              title="ArtStation">
+              <i class="fab fa-artstation"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/abhishek-hibare-a6320822a/" target="_blank" class="social-portal-btn"
+              title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/artist_4ever__?igsh=Ymt1eHFrcGZzZTBk&amp;utm_source=qr" target="_blank"
+              class="social-portal-btn" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@AbhitheArtist_1305" target="_blank" class="social-portal-btn"
+              title="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
       </div>
 
-      <!-- Live Contact Terminal Block -->
-      <div class="col-md-3">
-        <h5 class="fw-bold text-uppercase tracking-wider text-secondary-light mb-3">Contact Channel</h5>
-        <ul class="list-unstyled small">
-          <li class="mb-3 d-flex align-items-center">
-            <span class="contact-icon-wrapper d-flex align-items-center justify-content-center me-2">
-              <i class="fas fa-envelope text-danger"></i>
-            </span>
-            <a href="mailto:abhishekhibare1305@gmail.com" class="text-muted text-decoration-none hover-link">abhishekhibare1305@gmail.com</a>
-          </li>
-          <li class="d-flex align-items-center">
-            <span class="contact-icon-wrapper d-flex align-items-center justify-content-center me-2">
-              <i class="fas fa-map-marker-alt text-danger"></i>
-            </span>
-            <span class="text-muted">Solapur, Maharashtra, India</span>
-          </li>
-        </ul>
-        
-        <!-- Interactive Availability Status Indicator -->
-        <div class="d-inline-flex align-items-center mt-3 bg-dark-card px-3 py-1 rounded-pill border border-dark-edge">
-          <span class="status-pulse-dot me-2"></span>
-          <span class="font-monospace text-muted" style="font-size: 0.72rem; uppercase">Status: Available for Briefs</span>
-        </div>
-      </div>
-
-      <!-- Social / Creative Portal Links -->
-      <div class="col-md-4 text-md-end">
-        <h5 class="fw-bold text-uppercase tracking-wider text-secondary-light mb-3">Creative Portals</h5>
-        <div class="d-flex gap-2 justify-content-start justify-content-md-end flex-wrap">
-          <a href="https://www.behance.net/abhishekhibare" target="_blank" class="social-portal-btn" title="Behance">
-            <i class="fab fa-behance"></i>
-          </a>
-          <a href="https://www.artstation.com/abhishekhibare13" target="_blank" class="social-portal-btn" title="ArtStation">
-            <i class="fab fa-artstation"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/abhishek-hibare-a6320822a/" target="_blank" class="social-portal-btn" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://www.instagram.com/artist_4ever__?igsh=Ymt1eHFrcGZzZTBk&amp;utm_source=qr" target="_blank" class="social-portal-btn" title="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.youtube.com/@AbhitheArtist_1305" target="_blank" class="social-portal-btn" title="YouTube">
-            <i class="fab fa-youtube"></i>
-          </a>
+      <!-- Divider and Attribution -->
+      <hr class="border-dark-edge my-4">
+      <div class="row align-items-center justify-content-between small font-monospace text-muted">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          &copy; <span id="footer-year">2026</span> Vaibhaavw — Production System.
         </div>
       </div>
     </div>
-
-    <!-- Divider and Attribution -->
-    <hr class="border-dark-edge my-4">
-    <div class="row align-items-center justify-content-between small font-monospace text-muted">
-      <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-        &copy; <span id="footer-year">2026</span> Vaibhaavw — Production System.
-      </div>
-
-    </div>
-  </div>
-</footer>
-
-
-
+  </footer>
 
   <script>
     // Automatically set current year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Font Awesome for icons -->
@@ -1868,6 +2206,5 @@ body {
     }, { passive: true });
   </script>
 </body>
-
 
 </html>
